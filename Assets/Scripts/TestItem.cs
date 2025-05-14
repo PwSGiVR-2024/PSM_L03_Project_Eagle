@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class TestItem : Item
 {
     protected override void Awake()
@@ -8,8 +6,9 @@ public class TestItem : Item
         base.Awake();
         ID = 1;
     }
+
     protected override void OnUse()
     {
-        
+        // u¿ycie itemu
     }
 }
