@@ -1,110 +1,104 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using TMPro;
 
 public class Hotbar : MonoBehaviour
 {
-    public Image[] displaySlots;              // 3 sloty UI: lewy, środkowy, prawy
+    [SerializeField] Image[] displaySlots;              // 3 sloty UI: lewy, środkowy, prawy
     public Sprite emptySlotSprite;            // Puste tło dla nieaktywnych
-    public Sprite handIcon;                   // Ikona pustej ręki
-    public List<Item> itemIcons = new List<Item>();  // Przedmioty w hotbarze
+    [SerializeField] List<Item> itemList = new();  // Przedmioty w hotbarze
+    [SerializeField] TMP_Text currentItemLabel;
+    [SerializeField] Item hand;
 
-    private int selectedIndex = 0;  // 0 = ręka, 1+ = indeks w itemIcons
+    private int selectedIndex = 0;
 
     void Start()
     {
+        AddItem(hand);
         UpdateDisplay();
     }
 
     void Update()
     {
-        int totalSlots = itemIcons.Count + 1; // +1 bo ręka
+        int totalSlots = itemList.Count; 
 
         float scroll = Input.GetAxis("Mouse ScrollWheel");
 
-        if (scroll > 0f)
+        if (scroll < 0f)
         {
             selectedIndex = (selectedIndex - 1 + totalSlots) % totalSlots;
-            Debug.Log("Scroll up → selected index: " + selectedIndex);
             UpdateDisplay();
         }
-        else if (scroll < 0f)
+        else if (scroll > 0f)
         {
             selectedIndex = (selectedIndex + 1) % totalSlots;
-            Debug.Log("Scroll down → selected index: " + selectedIndex);
             UpdateDisplay();
         }
     }
 
     void UpdateDisplay()
     {
-        int total = itemIcons.Count;
+        int total = itemList.Count;
 
         if (total == 0 && selectedIndex == 0)
         {
             // Tylko ręka
             displaySlots[0].sprite = emptySlotSprite;
-            displaySlots[1].sprite = handIcon;
+            displaySlots[1].sprite = emptySlotSprite;
             displaySlots[2].sprite = emptySlotSprite;
+            displaySlots[3].sprite = emptySlotSprite;
+            displaySlots[4].sprite = emptySlotSprite;
 
-            displaySlots[0].color = new Color(1f, 1f, 1f, 0.2f);
-            displaySlots[1].color = new Color(1f, 1f, 1f, 1f);
-            displaySlots[2].color = new Color(1f, 1f, 1f, 0.2f);
+            displaySlots[0].color = new Color(1f, 1f, 1f, 0.1f);
+            displaySlots[1].color = new Color(1f, 1f, 1f, 0.5f);
+            displaySlots[2].color = new Color(1f, 1f, 1f, 1f);
+            displaySlots[3].color = new Color(1f, 1f, 1f, 0.5f);
+            displaySlots[4].color = new Color(1f, 1f, 1f, 0.1f);
             return;
         }
-
-        int left = (selectedIndex - 1 + total + 1) % (total + 1);   // +1 bo ręka
+        int leftSmall = (selectedIndex - 2 + total) % (total);
+        int left = (selectedIndex - 1 + total) % (total);
         int center = selectedIndex;
-        int right = (selectedIndex + 1) % (total + 1);
+        int right = (selectedIndex + 1) % (total );
+        int rightSmall = (selectedIndex + 2) % (total);
 
-        Debug.Log($"Displaying - Left: {left}, Center: {center}, Right: {right}");
-
-        DisplaySlot(0, left);
-        DisplaySlot(1, center);
-        DisplaySlot(2, right);
+        DisplaySlot(0, leftSmall);
+        DisplaySlot(1, left);
+        DisplaySlot(2, center);
+        DisplaySlot(3, right);
+        DisplaySlot(4, rightSmall);
+        currentItemLabel.text = itemList[selectedIndex].itemName;
     }
 
     void DisplaySlot(int slotIndex, int itemIndex)
     {
-        if (itemIndex == 0)
-        {
-            displaySlots[slotIndex].sprite = handIcon;
-            displaySlots[slotIndex].color = slotIndex == 1 ? Color.white : new Color(1f, 1f, 1f, 0.2f);
-        }
-        else
-        {
-            int actualIndex = itemIndex - 1;
-            if (actualIndex >= 0 && actualIndex < itemIcons.Count)
+
+            int actualIndex = itemIndex;
+            if (actualIndex >= 0 && actualIndex < itemList.Count)
             {
-                displaySlots[slotIndex].sprite = itemIcons[actualIndex].itemIcon;
-                displaySlots[slotIndex].color = slotIndex == 1 ? Color.white : new Color(1f, 1f, 1f, 0.4f);
+                displaySlots[slotIndex].sprite = itemList[actualIndex].itemIcon;
+                displaySlots[slotIndex].color = slotIndex == 2 ? Color.white : new Color(1f, 1f, 1f, 0.8f);
             }
             else
             {
                 displaySlots[slotIndex].sprite = emptySlotSprite;
                 displaySlots[slotIndex].color = new Color(1f, 1f, 1f, 0.2f);
             }
-        }
+        
     }
 
     public void AddItem(Item newItem)
     {
         if (newItem != null && newItem.itemIcon != null)
         {
-            if (itemIcons.Contains(newItem))
+            if (itemList.Contains(newItem))
             {
-                Debug.Log("Item already in hotbar.");
                 return;
             }
 
-            itemIcons.Add(newItem);
+            itemList.Add(newItem);
             UpdateDisplay();
-
-            Debug.Log("Item added: " + newItem.name);
-        }
-        else
-        {
-            Debug.LogWarning("Dodawany item jest pusty lub nie ma przypisanego itemIcon.");
         }
     }
 }
