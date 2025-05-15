@@ -49,23 +49,30 @@ public class Hotbar : MonoBehaviour
             displaySlots[0].sprite = emptySlotSprite;
             displaySlots[1].sprite = emptySlotSprite;
             displaySlots[2].sprite = emptySlotSprite;
+            displaySlots[3].sprite = emptySlotSprite;
+            displaySlots[4].sprite = emptySlotSprite;
 
-            displaySlots[0].color = new Color(1f, 1f, 1f, 0.2f);
-            displaySlots[1].color = new Color(1f, 1f, 1f, 1f);
-            displaySlots[2].color = new Color(1f, 1f, 1f, 0.2f);
+            displaySlots[0].color = new Color(1f, 1f, 1f, 0.1f);
+            displaySlots[1].color = new Color(1f, 1f, 1f, 0.5f);
+            displaySlots[2].color = new Color(1f, 1f, 1f, 1f);
+            displaySlots[3].color = new Color(1f, 1f, 1f, 0.5f);
+            displaySlots[4].color = new Color(1f, 1f, 1f, 0.1f);
             return;
         }
-
+        int leftSmall = (selectedIndex - 2 + total) % (total);
         int left = (selectedIndex - 1 + total) % (total);
         int center = selectedIndex;
         int right = (selectedIndex + 1) % (total );
+        int rightSmall = (selectedIndex + 2) % (total);
 
         Debug.Log($"Displaying - Left: {left}, Center: {center}, Right: {right}");
 
-        DisplaySlot(0, left);
-        DisplaySlot(1, center);
+        DisplaySlot(0, leftSmall);
+        DisplaySlot(1, left);
+        DisplaySlot(2, center);
+        DisplaySlot(3, right);
+        DisplaySlot(4, rightSmall);
         currentItemLabel.text = itemList[selectedIndex].itemName;
-        DisplaySlot(2, right);
     }
 
     void DisplaySlot(int slotIndex, int itemIndex)
@@ -75,7 +82,7 @@ public class Hotbar : MonoBehaviour
             if (actualIndex >= 0 && actualIndex < itemList.Count)
             {
                 displaySlots[slotIndex].sprite = itemList[actualIndex].itemIcon;
-                displaySlots[slotIndex].color = slotIndex == 1 ? Color.white : new Color(1f, 1f, 1f, 0.4f);
+                displaySlots[slotIndex].color = slotIndex == 2 ? Color.white : new Color(1f, 1f, 1f, 0.8f);
             }
             else
             {
