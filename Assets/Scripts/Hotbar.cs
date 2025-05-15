@@ -28,13 +28,11 @@ public class Hotbar : MonoBehaviour
         if (scroll < 0f)
         {
             selectedIndex = (selectedIndex - 1 + totalSlots) % totalSlots;
-            Debug.Log("Scroll up → selected index: " + selectedIndex);
             UpdateDisplay();
         }
         else if (scroll > 0f)
         {
             selectedIndex = (selectedIndex + 1) % totalSlots;
-            Debug.Log("Scroll down → selected index: " + selectedIndex);
             UpdateDisplay();
         }
     }
@@ -64,8 +62,6 @@ public class Hotbar : MonoBehaviour
         int center = selectedIndex;
         int right = (selectedIndex + 1) % (total );
         int rightSmall = (selectedIndex + 2) % (total);
-
-        Debug.Log($"Displaying - Left: {left}, Center: {center}, Right: {right}");
 
         DisplaySlot(0, leftSmall);
         DisplaySlot(1, left);
@@ -98,18 +94,11 @@ public class Hotbar : MonoBehaviour
         {
             if (itemList.Contains(newItem))
             {
-                Debug.Log("Item already in hotbar.");
                 return;
             }
 
             itemList.Add(newItem);
             UpdateDisplay();
-
-            Debug.Log("Item added: " + newItem.name);
-        }
-        else
-        {
-            Debug.LogWarning("Dodawany item jest pusty lub nie ma przypisanego itemIcon.");
         }
     }
 }
