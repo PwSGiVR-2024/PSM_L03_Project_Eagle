@@ -1,0 +1,90 @@
+using UnityEngine;
+using UnityEngine.UI;
+using System.Collections.Generic;
+using TMPro;
+
+public class UIInteractionDisplay : MonoBehaviour
+{
+    public GameObject optionPrefab; // przypisz prefab InteractionOption
+    public Transform container;     // przypisz InteractionPanel
+    private List<OptionUI> activeOptions = new();
+
+    private class OptionUI
+    {
+        public GameObject root;
+        public TMP_Text label;
+        public Image progress;
+    }
+
+    public void ShowOptions(string[] options, Transform worldTarget)
+    {
+        ClearOptions();
+
+        foreach (string option in options)
+        {
+            if (string.IsNullOrEmpty(option)) continue;
+
+            GameObject go = Instantiate(optionPrefab, container);
+            OptionUI opt = new OptionUI
+            {
+                root = go,
+                label = go.transform.Find("Label").GetComponent<TMP_Text>(),
+                progress = go.transform.Find("ProgressBar").GetComponent<Image>()
+            };
+            opt.label.text = option;
+            opt.progress.fillAmount = 0f;
+            activeOptions.Add(opt);
+        }
+
+        gameObject.SetActive(true);
+
+        //  Nowa pozycja przed kamer¹
+        Camera cam = Camera.main;
+        float distance = 1f;
+        transform.position = cam.transform.position + cam.transform.forward * distance;
+
+        LookAtPlayer();
+    }
+
+
+    public void HideOptions()
+    {
+        ClearOptions();
+        gameObject.SetActive(false);
+    }
+
+    public void UpdateHoldProgress(int index, float progress)
+    {
+        if (index >= 0 && index < activeOptions.Count)
+        {
+            Color c = activeOptions[index].progress.color;
+            c.a = Mathf.Clamp01(progress); // upewnij siê, ¿e alfa mieœci siê w [0, 1]
+            activeOptions[index].progress.color = c;
+        }
+    }
+
+    private void ClearOptions()
+    {
+        foreach (var opt in activeOptions)
+            Destroy(opt.root);
+        activeOptions.Clear();
+    }
+
+    private void LookAtPlayer()
+    {
+        Transform cam = Camera.main.transform;
+        transform.LookAt(transform.position + cam.forward);
+    }
+    void LateUpdate()
+    {
+        if (!Camera.main || !gameObject.activeSelf) return;
+
+        float distance = 1f;
+        Vector3 targetPos = Camera.main.transform.position + Camera.main.transform.forward * distance;
+        Quaternion targetRot = Quaternion.LookRotation(Camera.main.transform.forward);
+
+        transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * 10f);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, Time.deltaTime * 10f);
+    }
+
+}
