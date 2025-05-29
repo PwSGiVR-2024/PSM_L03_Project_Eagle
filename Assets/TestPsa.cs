@@ -4,7 +4,7 @@ public class TestPsa : MonoBehaviour, IInteractable
 {
     public string[] GetInteractionLabels()
     {
-        return new string[] { "Pies opcja 1 ","", "", ""};
+        return new string[] { "blagam","","",""};
     }
 
     public void Interact(int index)

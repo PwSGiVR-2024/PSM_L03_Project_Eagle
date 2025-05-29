@@ -25,6 +25,9 @@ public class InteractionManager : MonoBehaviour
     private float lostFocusTimer = 0f;
     private float lostFocusDuration = 0.3f;
     private bool interactionInProgress = false;
+
+
+
     void Update()
     {
         bool hitSomething = Physics.Raycast(mainCamera.position, mainCamera.forward, out RaycastHit hitInfo, interactionRange, interactionMask);
@@ -63,18 +66,17 @@ public class InteractionManager : MonoBehaviour
 
     void HandleInput(IInteractable interactable)
     {
-        bool anyInteraction = false;
-
         for (int i = 0; i < keys.Length; i++)
         {
+            
             if (string.IsNullOrEmpty(currentOptions[i])) continue;
 
-            if (Input.GetKey(keys[i]))
+            if ((Input.GetKey(keys[i]) && !interactionInProgress) || (Input.GetKey(keys[0])&& string.IsNullOrEmpty(currentOptions[1])&& string.IsNullOrEmpty(currentOptions[2])&& string.IsNullOrEmpty(currentOptions[3])))
             {
-                anyInteraction = true;
+                
+                interactionInProgress = true;
                 holdTimers[i] += Time.deltaTime;
                 uiDisplay.UpdateHoldProgress(i, holdTimers[i] / requiredHoldTime);
-
                 if (holdTimers[i] >= requiredHoldTime)
                 {
                     Debug.Log("Wykonujê interakcjê nr " + i);
@@ -85,12 +87,13 @@ public class InteractionManager : MonoBehaviour
             }
             else
             {
+                
+                interactionInProgress = false;
                 holdTimers[i] = 0f;
                 uiDisplay.UpdateHoldProgress(i, 0f);
+
             }
         }
-
-        interactionInProgress = anyInteraction;
     }
 
 
