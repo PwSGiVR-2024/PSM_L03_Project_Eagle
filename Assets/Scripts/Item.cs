@@ -7,7 +7,12 @@ public abstract class Item : MonoBehaviour
     public int currentUses;
     public string itemName;
     public Sprite itemIcon;  // Ikona 2D przedmiotu (do wyœwietlenia w hotbarze)
+    [SerializeField] Hotbar hotbar;
 
+    private void Start()
+    {
+        hotbar = GameObject.FindGameObjectWithTag("HotBar").GetComponent<Hotbar>();
+    }
     protected virtual void Awake()
     {
         if (maxUses > 0)
@@ -28,7 +33,7 @@ public abstract class Item : MonoBehaviour
             Debug.Log("Brak u¿yæ przedmiotu!");
         }
     }
-    public void Pickup(Hotbar hotbar)
+    public void Pickup()
     {
         // Dodaj siebie do hotbara i wy³¹cz siebie z gry
         hotbar.AddItem(this);

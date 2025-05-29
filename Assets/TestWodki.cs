@@ -4,7 +4,7 @@ public class TestWodki : MonoBehaviour, IInteractable
 {
     public string[] GetInteractionLabels()
     {
-        return new string[] { "Wypij", "Wylej", "", "" };
+        return new string[] { "Wypij", "Wylej", "Zjedz", "" };
     }
 
     public void Interact(int index)
@@ -16,6 +16,9 @@ public class TestWodki : MonoBehaviour, IInteractable
                 break;
             case 1:
                 Debug.Log("Wódka wylana");
+                break;
+            case 2:
+                Debug.Log("Wódka zjedzona");
                 break;
         }
     }

@@ -40,7 +40,7 @@ public class UIInteractionDisplay : MonoBehaviour
 
         //  Nowa pozycja przed kamer¹
         Camera cam = Camera.main;
-        float distance = 1f;
+        float distance = 1.6f;
         transform.position = cam.transform.position + cam.transform.forward * distance;
 
         LookAtPlayer();
@@ -79,7 +79,7 @@ public class UIInteractionDisplay : MonoBehaviour
     {
         if (!Camera.main || !gameObject.activeSelf) return;
 
-        float distance = 1f;
+        float distance = 1.6f;
         Vector3 targetPos = Camera.main.transform.position + Camera.main.transform.forward * distance;
         Quaternion targetRot = Quaternion.LookRotation(Camera.main.transform.forward);
 

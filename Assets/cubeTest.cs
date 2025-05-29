@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class TestPsa : MonoBehaviour, IInteractable
+public class cubeTest : MonoBehaviour, IInteractable
 {
     public string[] GetInteractionLabels()
     {
-        return new string[] { "Pies opcja 1 ","", "", ""};
+        return new string[] { "Podnieœ", "", "", "" };
     }
 
     public void Interact(int index)
@@ -12,7 +12,7 @@ public class TestPsa : MonoBehaviour, IInteractable
         switch (index)
         {
             case 0:
-                Debug.Log("Pies opcja 1");
+                gameObject.GetComponent<TestItem>().Pickup();
                 break;
         }
     }

@@ -16,7 +16,7 @@ public class TestAddItemButton : MonoBehaviour
     {
         if (testItemInScene != null)
         {
-            testItemInScene.Pickup(hotbar);
+            testItemInScene.Pickup();
         }
     }
 }

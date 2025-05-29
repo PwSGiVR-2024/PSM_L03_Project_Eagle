@@ -19,7 +19,7 @@ public class InteractionManager : MonoBehaviour
 
     private KeyCode[] keys = { KeyCode.E, KeyCode.F, KeyCode.G, KeyCode.H };
     private float[] holdTimers = new float[4];
-    private float requiredHoldTime = 3f;
+    private float requiredHoldTime = 1.5f;
 
     private GameObject currentTargetObject;
     private float lostFocusTimer = 0f;
@@ -63,13 +63,15 @@ public class InteractionManager : MonoBehaviour
 
     void HandleInput(IInteractable interactable)
     {
+        bool anyInteraction = false;
+
         for (int i = 0; i < keys.Length; i++)
         {
             if (string.IsNullOrEmpty(currentOptions[i])) continue;
 
-            if (Input.GetKey(keys[i])&& !interactionInProgress)
+            if (Input.GetKey(keys[i]))
             {
-                interactionInProgress = true;
+                anyInteraction = true;
                 holdTimers[i] += Time.deltaTime;
                 uiDisplay.UpdateHoldProgress(i, holdTimers[i] / requiredHoldTime);
 
@@ -83,13 +85,14 @@ public class InteractionManager : MonoBehaviour
             }
             else
             {
-                interactionInProgress =  false;
                 holdTimers[i] = 0f;
                 uiDisplay.UpdateHoldProgress(i, 0f);
-
             }
         }
+
+        interactionInProgress = anyInteraction;
     }
+
 
     void ResetHoldTimers()
     {
