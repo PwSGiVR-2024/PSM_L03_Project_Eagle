@@ -1,40 +1,48 @@
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
 public interface IInteractable
 {
-    public string[] GetInteractionLabels(); // np. ["Otwórz", "Zamknij", "", ""]
-    public void Interact(int index); // 0-3
+    string[] GetInteractionLabels(); // np. ["Otwórz", "Zamknij", "", ""]
+    void Interact(int index); // 0-3
 }
+
 public class InteractionManager : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] private Transform mainCamera;
-    [SerializeField] private float interactionRange = 3f;
     [SerializeField] private UIInteractionDisplay uiDisplay;
-    [SerializeField] private LayerMask interactionMask;
 
-    private IInteractable currentInteractable;
-    private string[] currentOptions = new string[4];
+    [Header("Settings")]
+    [SerializeField] private float interactionRange = 3f;
+    [SerializeField] private float requiredHoldTime = 1.5f;
+    [SerializeField] private LayerMask interactionMask;
 
     private KeyCode[] keys = { KeyCode.E, KeyCode.F, KeyCode.G, KeyCode.H };
     private float[] holdTimers = new float[4];
-    private float requiredHoldTime = 1.5f;
+    private string[] currentOptions = new string[4];
 
+    private IInteractable currentInteractable;
     private GameObject currentTargetObject;
+
     private float lostFocusTimer = 0f;
-    private float lostFocusDuration = 0.3f;
-    private bool interactionInProgress = false;
+    private const float lostFocusDuration = 0.3f;
 
-
+    private int? activeInteractionIndex = null;
 
     void Update()
     {
-        bool hitSomething = Physics.Raycast(mainCamera.position, mainCamera.forward, out RaycastHit hitInfo, interactionRange, interactionMask);
+        DetectInteractableInView();
+        HandleFocusLoss();
+        HandleUserInput();
+    }
 
-        if (hitSomething && hitInfo.collider.TryGetComponent(out IInteractable interactable))
+    private void DetectInteractableInView()
+    {
+        bool hit = Physics.Raycast(mainCamera.position, mainCamera.forward, out RaycastHit hitInfo, interactionRange, interactionMask);
+
+        if (hit && hitInfo.collider.TryGetComponent(out IInteractable interactable))
         {
-            // Jeœli nowy obiekt lub inny collider
             if (interactable != currentInteractable || hitInfo.collider.gameObject != currentTargetObject)
             {
                 currentInteractable = interactable;
@@ -44,65 +52,100 @@ public class InteractionManager : MonoBehaviour
                 uiDisplay.ShowOptions(currentOptions, hitInfo.transform);
             }
 
-            lostFocusTimer = 0f; // resetuj timer utraty celu
-            HandleInput(interactable);
+            lostFocusTimer = 0f;
         }
-        else if (currentInteractable != null)
+    }
+
+    private void HandleFocusLoss()
+    {
+        if (currentInteractable == null) return;
+
+        bool hit = Physics.Raycast(mainCamera.position, mainCamera.forward, out RaycastHit hitInfo, interactionRange, interactionMask);
+        if (!hit || hitInfo.collider.gameObject != currentTargetObject)
         {
             lostFocusTimer += Time.deltaTime;
 
             if (lostFocusTimer >= lostFocusDuration)
             {
-                currentInteractable = null;
-                currentTargetObject = null;
-                lostFocusTimer = 0f;
-
-                uiDisplay.HideOptions();
-                ResetHoldTimers();
+                ClearCurrentInteractable();
             }
+        }
+        else
+        {
+            lostFocusTimer = 0f;
         }
     }
 
-
-    void HandleInput(IInteractable interactable)
+    private void ClearCurrentInteractable()
     {
+        currentInteractable = null;
+        currentTargetObject = null;
+        lostFocusTimer = 0f;
+
+        uiDisplay.HideOptions();
+        CancelAllInteractions();
+    }
+
+    private void HandleUserInput()
+    {
+        if (currentInteractable == null) return;
+
+        bool anyKeyHeld = false;
+
         for (int i = 0; i < keys.Length; i++)
         {
-            
             if (string.IsNullOrEmpty(currentOptions[i])) continue;
 
-            if ((Input.GetKey(keys[i]) && !interactionInProgress) || (Input.GetKey(keys[0])&& string.IsNullOrEmpty(currentOptions[1])&& string.IsNullOrEmpty(currentOptions[2])&& string.IsNullOrEmpty(currentOptions[3])))
+            if (Input.GetKey(keys[i]))
             {
-                
-                interactionInProgress = true;
-                holdTimers[i] += Time.deltaTime;
-                uiDisplay.UpdateHoldProgress(i, holdTimers[i] / requiredHoldTime);
-                if (holdTimers[i] >= requiredHoldTime)
+                anyKeyHeld = true;
+
+                if (activeInteractionIndex == null)
                 {
-                    Debug.Log("Wykonujê interakcjê nr " + i);
-                    interactable.Interact(i);
-                    ResetHoldTimers();
-                    return;
+                    activeInteractionIndex = i;
+                }
+
+                if (activeInteractionIndex == i)
+                {
+                    holdTimers[i] += Time.deltaTime;
+                    uiDisplay.UpdateHoldProgress(i, holdTimers[i] / requiredHoldTime);
+
+                    if (holdTimers[i] >= requiredHoldTime)
+                    {
+                        Debug.Log($"Wykonujê interakcjê nr {i}");
+                        currentInteractable.Interact(i);
+                        CancelAllInteractions();
+                        return;
+                    }
                 }
             }
             else
             {
-                
-                interactionInProgress = false;
+                if (activeInteractionIndex == i)
+                {
+                    // jeœli puszczono klawisz aktywnej interakcji
+                    activeInteractionIndex = null;
+                }
+
                 holdTimers[i] = 0f;
                 uiDisplay.UpdateHoldProgress(i, 0f);
-
             }
+        }
+
+        if (!anyKeyHeld)
+        {
+            activeInteractionIndex = null;
         }
     }
 
-
-    void ResetHoldTimers()
+    private void CancelAllInteractions()
     {
         for (int i = 0; i < holdTimers.Length; i++)
         {
             holdTimers[i] = 0f;
             uiDisplay.UpdateHoldProgress(i, 0f);
         }
+
+        activeInteractionIndex = null;
     }
 }
