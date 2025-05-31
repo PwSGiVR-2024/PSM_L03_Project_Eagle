@@ -16,6 +16,7 @@ public class TestWodki : MonoBehaviour, IInteractable
                 break;
             case 1:
                 Debug.Log("Wódka wylana");
+                InspectionManager.RequestInspection(gameObject);
                 break;
             case 2:
                 Debug.Log("Wódka zjedzona");
