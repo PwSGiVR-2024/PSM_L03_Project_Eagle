@@ -4,13 +4,16 @@ public class InspectionManager : MonoBehaviour
 {
     public static InspectionManager Instance { get; private set; }
 
-    [SerializeField] private Transform inspectionContainer; // miejsce na œrodku ekranu
+    [Header("Referencje scenowe")]
+    [SerializeField] private Transform inspectionContainer; // InspectionArea
     [SerializeField] private GameObject blurPanel; // UI/Canvas z shaderem blur
-    [SerializeField] private GameObject inspectionUI; // UI inspekcji (np. tekst: "WyjdŸ: R")
+    [SerializeField] private GameObject inspectionUI; // UI inspekcji (tekst: "WyjdŸ: R", tipy, itd.)
+    [SerializeField] private Camera inspectionCamera;
+    [SerializeField] private PlayerLook playerLook;
+    [SerializeField] private InspectionCameraController inspectionCameraController;
 
     private GameObject inspectedObjectCopy;
     private bool isInspecting = false;
-    private PlayerLook playerLook; // referencja do PlayerLook
 
     void Awake()
     {
@@ -28,49 +31,86 @@ public class InspectionManager : MonoBehaviour
 
     public void StartInspection(GameObject objectToInspect)
     {
-
         if (isInspecting) return;
-        // PAUZA gry
+
         Time.timeScale = 0f;
         isInspecting = true;
 
-        // W³¹cz blur
-        blurPanel.SetActive(true);
+        // Blokujemy ruch kamery gracza
+        if (playerLook != null)
+            playerLook.enabled = false;
 
-        // W³¹cz UI inspekcji
+        // Pokazujemy blur oraz UI inspekcji
+        blurPanel.SetActive(true);
         inspectionUI.SetActive(true);
 
-        // Skopiuj obiekt do inspekcji i ustaw na œrodek
+        // Skopiuj obiekt do inspekcji na œrodek
         inspectedObjectCopy = Instantiate(objectToInspect, inspectionContainer);
         inspectedObjectCopy.transform.localPosition = Vector3.zero;
         inspectedObjectCopy.transform.localRotation = Quaternion.identity;
 
-        // Dodaj komponent obracania
-        inspectedObjectCopy.AddComponent<InspectionRotator>();
+        CenterModel(inspectedObjectCopy);
+
+        // Resetujemy kamerê inspekcji na start
+        if (inspectionCameraController != null)
+            inspectionCameraController.ResetCamera();
+
+        // Ustawiamy kamerê inspekcyjn¹ aktywn¹ (jeœli u¿ywasz RenderTexture na RawImage)
+        if (inspectionCamera != null)
+            inspectionCamera.gameObject.SetActive(true);
+
+        // Odblokuj kursor
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void EndInspection()
     {
-        // ODPAUZA gry
         Time.timeScale = 1f;
         isInspecting = false;
 
-        // Wy³¹cz blur
-        blurPanel.SetActive(false);
+        // Przywracamy ruch kamery gracza
+        if (playerLook != null)
+            playerLook.enabled = true;
 
-        // Wy³¹cz UI inspekcji
+        blurPanel.SetActive(false);
         inspectionUI.SetActive(false);
 
-        // Usuñ skopiowany obiekt
+        // Niszczymy obiekt inspekcyjny
         if (inspectedObjectCopy != null)
-        {
             Destroy(inspectedObjectCopy);
-        }
+
+        // Ukryj kamerê inspekcyjn¹ (jeœli u¿ywasz RenderTexture na RawImage)
+        if (inspectionCamera != null)
+            inspectionCamera.gameObject.SetActive(false);
+
+        // Przywróæ kursor do gry
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
-    // To mo¿esz wywo³ywaæ z systemu interakcji:
+    // Mo¿esz wywo³aæ to z systemu interakcji
     public static void RequestInspection(GameObject obj)
     {
         Instance.StartInspection(obj);
+    }
+    void CenterModel(GameObject model)
+    {
+        // Pobierz wszystkie meshe (MeshRenderer) w prefabie
+        var renderers = model.GetComponentsInChildren<MeshRenderer>();
+
+        if (renderers.Length == 0) return;
+
+        // Oblicz bounds ca³ego modelu
+        Bounds combinedBounds = renderers[0].bounds;
+        for (int i = 1; i < renderers.Length; i++)
+            combinedBounds.Encapsulate(renderers[i].bounds);
+
+        // Œrodek bounding boxa w world space
+        Vector3 center = combinedBounds.center;
+
+        // Przesuñ model tak, by œrodek bounds by³ w punkcie (0,0,0) kontenera
+        // (odwracamy przesuniêcie wzglêdem rodzica)
+        model.transform.position -= (center - inspectionContainer.position);
     }
 }
