@@ -27,6 +27,10 @@ public class InspectionManager : MonoBehaviour
         {
             EndInspection();
         }
+        else if (isInspecting && Input.GetKeyUp(KeyCode.Escape))
+        {
+            EndInspectionWithPause();
+        }
     }
 
     public void StartInspection(GameObject objectToInspect)
@@ -60,8 +64,8 @@ public class InspectionManager : MonoBehaviour
             inspectionCamera.gameObject.SetActive(true);
 
         // Odblokuj kursor
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        //Cursor.lockState = CursorLockMode.None;
+        //Cursor.visible = true;
     }
 
     public void EndInspection()
@@ -85,8 +89,23 @@ public class InspectionManager : MonoBehaviour
             inspectionCamera.gameObject.SetActive(false);
 
         // Przywróæ kursor do gry
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+       // Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
+    }
+    public void EndInspectionWithPause()
+    {
+        isInspecting = false;
+
+        blurPanel.SetActive(false);
+        inspectionUI.SetActive(false);
+
+        // Niszczymy obiekt inspekcyjny
+        if (inspectedObjectCopy != null)
+            Destroy(inspectedObjectCopy);
+
+        // Ukryj kamerê inspekcyjn¹ (jeœli u¿ywasz RenderTexture na RawImage)
+        if (inspectionCamera != null)
+            inspectionCamera.gameObject.SetActive(false);
     }
 
     // Mo¿esz wywo³aæ to z systemu interakcji

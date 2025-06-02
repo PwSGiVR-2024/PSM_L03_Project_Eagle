@@ -13,7 +13,7 @@ public class PlayerLook : MonoBehaviour
         PlayerCamera = GetComponentInChildren<Camera>().transform;
 
     }
-    void FixedUpdate()
+    void Update()
     {
         Vector2 MouseInput = new Vector2
         {
