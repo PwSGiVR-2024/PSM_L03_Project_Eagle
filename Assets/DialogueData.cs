@@ -10,5 +10,13 @@ public class DialogueData
 public class DialogueEntry
 {
     public string id;
-    public List<string> lines;
+    public List<DialogueLine> lines;
+}
+
+[System.Serializable]
+public class DialogueLine
+{
+    public string speaker;
+    public string color;
+    public string text;
 }

@@ -20,6 +20,10 @@ public class TestWodki : MonoBehaviour, IInteractable
                 break;
             case 2:
                 Debug.Log("Wódka zjedzona");
+                if (DialogueManager.Instance.OnStartDialogueRequested != null)
+                {
+                    DialogueManager.Instance.OnStartDialogueRequested("002");
+                }
                 break;
         }
     }

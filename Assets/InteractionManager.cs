@@ -32,6 +32,7 @@ public class InteractionManager : MonoBehaviour
 
     void Update()
     {
+        if (!GameStateManager.Instance.IsNormal) return;
         DetectInteractableInView();
         HandleFocusLoss();
         HandleUserInput();

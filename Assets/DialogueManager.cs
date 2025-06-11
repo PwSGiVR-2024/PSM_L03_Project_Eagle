@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-using UnityEngine.UI;
-using System;
 using TMPro;
+using System;
 using static GameStateManager;
 
 public class DialogueManager : MonoBehaviour
@@ -12,23 +11,30 @@ public class DialogueManager : MonoBehaviour
     public static DialogueManager Instance;
 
     [Header("UI Elements")]
-    public GameObject dialoguePanel;
-    public TMP_Text dialogueText;
-    public float textSpeed = 0.05f;
+    [SerializeField] private GameObject dialoguePanel;
+    [SerializeField] private TMP_Text dialogueText;
+    [SerializeField] private TMP_Text speakerNameText;
 
-    // Event do uruchamiania dialogu
     public Action<string> OnStartDialogueRequested;
 
-    private Queue<string> lines;
+    private Queue<DialogueLine> lines;
     private bool isTyping = false;
-    private bool skipTyping = false;
+    private float textSpeed = 0.065f;
 
     private void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+    }
 
+    private void OnEnable()
+    {
         OnStartDialogueRequested += StartDialogue;
+    }
+
+    private void OnDisable()
+    {
+        OnStartDialogueRequested -= StartDialogue;
     }
 
     private void Start()
@@ -42,7 +48,7 @@ public class DialogueManager : MonoBehaviour
         if (dialogue != null)
         {
             GameStateManager.Instance.SetState(GameState.Dialogue);
-            lines = new Queue<string>(dialogue.lines);
+            lines = new Queue<DialogueLine>(dialogue.lines);
             dialoguePanel.SetActive(true);
             DisplayNextLine();
         }
@@ -54,41 +60,38 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextLine()
     {
-        if (isTyping)
-        {
-            skipTyping = true;
-            return;
-        }
-
-        if (lines.Count == 0)
+        if (lines.Count == 0 && !isTyping)
         {
             EndDialogue();
             return;
         }
 
-        string line = lines.Dequeue();
-        StartCoroutine(TypeLine(line));
+        if (!isTyping)
+        {
+            DialogueLine line = lines.Dequeue();
+            StartCoroutine(TypeLine(line));
+        }
     }
 
-    IEnumerator TypeLine(string line)
+    IEnumerator TypeLine(DialogueLine line)
     {
         isTyping = true;
         dialogueText.text = "";
 
-        foreach (char letter in line)
+        // Ustaw imiê i kolor
+        speakerNameText.text = line.speaker;
+        if (ColorUtility.TryParseHtmlString(line.color, out Color speakerColor))
         {
-            if (skipTyping)
-            {
-                dialogueText.text = line;
-                break;
-            }
+            speakerNameText.color = speakerColor;
+        }
 
+        foreach (char letter in line.text)
+        {
             dialogueText.text += letter;
             yield return new WaitForSeconds(textSpeed);
         }
 
         isTyping = false;
-        skipTyping = false;
     }
 
     public void EndDialogue()
