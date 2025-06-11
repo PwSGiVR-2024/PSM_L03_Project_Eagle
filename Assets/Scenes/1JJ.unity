@@ -1991,6 +1991,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: old_lady
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: b877c1361bc8bf249bec79c78bb4781c, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 5b803acd3c653aa4397fd5929fc30d3f, type: 2}
+    - target: {fileID: 5866666021909216657, guid: b877c1361bc8bf249bec79c78bb4781c, type: 3}
+      propertyPath: m_CullingMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

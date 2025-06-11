@@ -16,7 +16,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TMP_Text speakerNameText;
 
     public Action<string> OnStartDialogueRequested;
-
+    public Action OnDialogueEnded;
     private Queue<DialogueLine> lines;
     private bool isTyping = false;
     private float textSpeed = 0.065f;
@@ -98,6 +98,9 @@ public class DialogueManager : MonoBehaviour
     {
         GameStateManager.Instance.SetState(GameState.Normal);
         dialoguePanel.SetActive(false);
+
+        OnDialogueEnded?.Invoke();
+        OnDialogueEnded = null;
     }
 
     private DialogueEntry GetDialogueById(string id)

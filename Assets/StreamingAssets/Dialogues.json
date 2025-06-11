@@ -14,6 +14,21 @@
           "text": "Cześć, przyszedłem zapytać o Jagnę."
         }
       ]
+    },
+    {
+      "id": "002",
+      "lines": [
+        {
+          "speaker": "Baba",
+          "color": "#ff8800",
+          "text": "Witaj, kochaniutki. Patrz co umiem."
+        },
+        {
+          "speaker": "Gracz",
+          "color": "#00ccff",
+          "text": "Boże babciu co ty robisz!?."
+        }
+      ]
     }
   ]
 }
