@@ -1,0 +1,18 @@
+{
+  "dialogues": [
+    {
+      "id": "001",
+      "lines": [
+        "Witaj, podróżniku.",
+        "Potrzebuję twojej pomocy.",
+        "Czy możesz mi pomóc odnaleźć mój amulet?"
+      ]
+    },
+    {
+      "id": "002",
+      "lines": [
+        "Nie mam teraz czasu, wróć później."
+      ]
+    }
+  ]
+}

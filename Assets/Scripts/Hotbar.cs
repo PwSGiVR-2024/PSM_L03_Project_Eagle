@@ -21,6 +21,7 @@ public class Hotbar : MonoBehaviour
 
     void Update()
     {
+        if (!GameStateManager.Instance.IsNormal) return;
         int totalSlots = itemList.Count; 
 
         float scroll = Input.GetAxis("Mouse ScrollWheel");

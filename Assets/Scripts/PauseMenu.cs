@@ -1,12 +1,12 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using static GameStateManager;
 
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenuUI;
-    [SerializeField] PlayerLook playerLook;
     private bool isPaused = false;
-
+    private GameState gameState;
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -29,8 +29,9 @@ public class PauseMenu : MonoBehaviour
 
     public void pause()
     {
+        gameState = GameStateManager.Instance.CurrentState;
+        GameStateManager.Instance.SetState(GameState.Pause);
         pauseMenuUI.SetActive(true);
-        playerLook.enabled = false;
         Time.timeScale = 0f;
         isPaused = true;
         Cursor.lockState = CursorLockMode.None;
@@ -39,8 +40,8 @@ public class PauseMenu : MonoBehaviour
 
     public void resume()
     {
+        GameStateManager.Instance.SetState(gameState);
         pauseMenuUI?.SetActive(false);
-        playerLook.enabled = true;
         Time.timeScale = 1f;
         isPaused = false;
         Cursor.lockState = CursorLockMode.Locked;

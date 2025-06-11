@@ -13,6 +13,10 @@ public class TestPsa : MonoBehaviour, IInteractable
         {
             case 0:
                 Debug.Log("Pies opcja 1");
+                if (DialogueManager.Instance.OnStartDialogueRequested != null)
+                {
+                    DialogueManager.Instance.OnStartDialogueRequested("001");
+                }
                 break;
         }
     }

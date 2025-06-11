@@ -1,4 +1,5 @@
 using UnityEngine;
+using static GameStateManager;
 
 public class InspectionManager : MonoBehaviour
 {
@@ -23,26 +24,18 @@ public class InspectionManager : MonoBehaviour
 
     void Update()
     {
-        if (isInspecting && Input.GetKeyDown(KeyCode.R))
+        if (isInspecting && Input.GetKeyDown(KeyCode.R) && GameStateManager.Instance.IsInspect)
         {
             EndInspection();
-        }
-        else if (isInspecting && Input.GetKeyUp(KeyCode.Escape))
-        {
-            EndInspectionWithPause();
         }
     }
 
     public void StartInspection(GameObject objectToInspect)
     {
         if (isInspecting) return;
-
+        GameStateManager.Instance.SetState(GameState.Inspect);
         Time.timeScale = 0f;
         isInspecting = true;
-
-        // Blokujemy ruch kamery gracza
-        if (playerLook != null)
-            playerLook.enabled = false;
 
         // Pokazujemy blur oraz UI inspekcji
         blurPanel.SetActive(true);
@@ -63,20 +56,14 @@ public class InspectionManager : MonoBehaviour
         if (inspectionCamera != null)
             inspectionCamera.gameObject.SetActive(true);
 
-        // Odblokuj kursor
-        //Cursor.lockState = CursorLockMode.None;
-        //Cursor.visible = true;
     }
 
     public void EndInspection()
     {
+        GameStateManager.Instance.SetState(GameState.Normal);
         Time.timeScale = 1f;
         isInspecting = false;
 
-        // Przywracamy ruch kamery gracza
-        if (playerLook != null)
-            playerLook.enabled = true;
-
         blurPanel.SetActive(false);
         inspectionUI.SetActive(false);
 
@@ -88,24 +75,6 @@ public class InspectionManager : MonoBehaviour
         if (inspectionCamera != null)
             inspectionCamera.gameObject.SetActive(false);
 
-        // Przywróæ kursor do gry
-       // Cursor.lockState = CursorLockMode.Locked;
-        //Cursor.visible = false;
-    }
-    public void EndInspectionWithPause()
-    {
-        isInspecting = false;
-
-        blurPanel.SetActive(false);
-        inspectionUI.SetActive(false);
-
-        // Niszczymy obiekt inspekcyjny
-        if (inspectedObjectCopy != null)
-            Destroy(inspectedObjectCopy);
-
-        // Ukryj kamerê inspekcyjn¹ (jeœli u¿ywasz RenderTexture na RawImage)
-        if (inspectionCamera != null)
-            inspectionCamera.gameObject.SetActive(false);
     }
 
     // Mo¿esz wywo³aæ to z systemu interakcji

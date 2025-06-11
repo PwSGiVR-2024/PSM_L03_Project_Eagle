@@ -25,7 +25,7 @@ public class InspectionCameraController : MonoBehaviour
     void Update()
     {
         if (!inspectionCamera.gameObject.activeInHierarchy) return;
-
+        if (!GameStateManager.Instance.IsInspect) return;
         if (Input.GetMouseButton(1))
         {
             float mouseX = Input.GetAxis("Mouse X");

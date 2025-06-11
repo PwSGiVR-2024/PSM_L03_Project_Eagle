@@ -22,6 +22,7 @@ public class PlayerMovment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!GameStateManager.Instance.IsNormal) return;
         Vector3 PlayerInput = new Vector3
         {
             x = InputSystem.actions.FindAction("Move").ReadValue<Vector2>().x,

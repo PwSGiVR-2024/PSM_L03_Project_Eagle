@@ -1,0 +1,21 @@
+{
+  "dialogues": [
+    {
+      "id": "001",
+      "lines": [
+        "Jak leci?.",
+        "Jesteś chory?.",
+        "Nie.",
+        "Ile ważysz?.",
+        "4 Kilo.",
+        "Dużo schudłeś"
+      ]
+    },
+    {
+      "id": "002",
+      "lines": [
+        "Nie mam teraz czasu, wróć później."
+      ]
+    }
+  ]
+}

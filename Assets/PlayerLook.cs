@@ -15,6 +15,7 @@ public class PlayerLook : MonoBehaviour
     }
     void Update()
     {
+        if (!GameStateManager.Instance.IsNormal) return;
         Vector2 MouseInput = new Vector2
         {
             x = InputSystem.actions.FindAction("Look").ReadValue<Vector2>().y,
