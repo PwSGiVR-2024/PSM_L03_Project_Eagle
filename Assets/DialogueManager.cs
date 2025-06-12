@@ -10,13 +10,35 @@ public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance;
 
+    [Serializable]
+    public class SpeakerAudio
+    {
+        public string speakerName;
+        public AudioClip blebleClip;
+        [Range(0.1f, 3f)] public float minPitch = 0.9f;
+        [Range(0.1f, 3f)] public float maxPitch = 1.1f;
+
+        public float GetRandomPitch()
+        {
+            return UnityEngine.Random.Range(minPitch, maxPitch);
+        }
+    }
+
     [Header("UI Elements")]
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private TMP_Text speakerNameText;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource speakerAudioSource;
+    [SerializeField] private List<SpeakerAudio> speakerSounds;
+    [SerializeField] private AudioClip blebleClip;
+    [SerializeField] private float defaultMinPitch = 0.9f;
+    [SerializeField] private float defaultMaxPitch = 1.1f;
+
     public Action<string> OnStartDialogueRequested;
     public Action OnDialogueEnded;
+
     private Queue<DialogueLine> lines;
     private bool isTyping = false;
     private float textSpeed = 0.065f;
@@ -78,20 +100,48 @@ public class DialogueManager : MonoBehaviour
         isTyping = true;
         dialogueText.text = "";
 
-        // Ustaw imiê i kolor
         speakerNameText.text = line.speaker;
-        if (ColorUtility.TryParseHtmlString(line.color, out Color speakerColor))
-        {
-            speakerNameText.color = speakerColor;
-        }
+
+        if (ColorUtility.TryParseHtmlString(line.color, out Color color))
+            speakerNameText.color = color;
+
+        SpeakerAudio speakerAudio = GetSpeakerAudio(line.speaker);
+        AudioClip currentClip = speakerAudio != null ? speakerAudio.blebleClip : blebleClip;
+
+        int charCount = 0;
 
         foreach (char letter in line.text)
         {
             dialogueText.text += letter;
+
+            if (char.IsLetterOrDigit(letter))
+            {
+                charCount++;
+                if (charCount % 2 == 0 && currentClip && speakerAudioSource)
+                {
+                    float pitch = speakerAudio != null ? speakerAudio.GetRandomPitch() : UnityEngine.Random.Range(defaultMinPitch, defaultMaxPitch);
+                    speakerAudioSource.pitch = pitch;
+                    speakerAudioSource.PlayOneShot(currentClip);
+                }
+            }
+
             yield return new WaitForSeconds(textSpeed);
         }
 
         isTyping = false;
+    }
+
+    private SpeakerAudio GetSpeakerAudio(string speakerName)
+    {
+        foreach (var speaker in speakerSounds)
+        {
+            if (speaker.speakerName.Equals(speakerName, StringComparison.OrdinalIgnoreCase))
+            {
+                return speaker;
+            }
+        }
+
+        return null;
     }
 
     public void EndDialogue()
