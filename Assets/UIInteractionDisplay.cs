@@ -8,18 +8,19 @@ public class UIInteractionDisplay : MonoBehaviour
     public GameObject optionPrefab; // przypisz prefab InteractionOption
     public Transform container;     // przypisz InteractionPanel
     private List<OptionUI> activeOptions = new();
-
+    private string[] hints = { "E", "F", "G", "H" };
     private class OptionUI
     {
         public GameObject root;
         public TMP_Text label;
+        public TMP_Text hint;
         public Image progress;
     }
 
     public void ShowOptions(string[] options, Transform worldTarget)
     {
         ClearOptions();
-
+        int i = 0;
         foreach (string option in options)
         {
             if (string.IsNullOrEmpty(option)) continue;
@@ -29,11 +30,14 @@ public class UIInteractionDisplay : MonoBehaviour
             {
                 root = go,
                 label = go.transform.Find("Label").GetComponent<TMP_Text>(),
+                hint = go.transform.Find("KeyHintText").GetComponent<TMP_Text>(),
                 progress = go.transform.Find("ProgressBar").GetComponent<Image>()
             };
             opt.label.text = option;
+            opt.hint.text = hints[i];
             opt.progress.fillAmount = 0f;
             activeOptions.Add(opt);
+            i++;
         }
 
         gameObject.SetActive(true);
@@ -57,9 +61,7 @@ public class UIInteractionDisplay : MonoBehaviour
     {
         if (index >= 0 && index < activeOptions.Count)
         {
-            Color c = activeOptions[index].progress.color;
-            c.a = Mathf.Clamp01(progress); // upewnij siê, ¿e alfa mieœci siê w [0, 1]
-            activeOptions[index].progress.color = c;
+            activeOptions[index].progress.fillAmount = Mathf.Clamp01(progress); 
         }
     }
 

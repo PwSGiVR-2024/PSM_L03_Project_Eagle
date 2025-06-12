@@ -4,14 +4,19 @@
       "id": "001",
       "lines": [
         {
-          "speaker": "Baba",
-          "color": "#ff8800",
-          "text": "Witaj, kochaniutki. Dawno cię nie było."
+          "speaker": "Gracz",
+          "color": "#00ccff",
+          "text": "Cześć, yyyyyyyyyyyyy psie."
+        },
+        {
+          "speaker": "Pies",
+          "color": "#ff00ff",
+          "text": "AAAAAAAAAA AAAAAAAAAAAAAAAA AAAAAAAAAAAAAA"
         },
         {
           "speaker": "Gracz",
           "color": "#00ccff",
-          "text": "Cześć, przyszedłem zapytać o Jagnę."
+          "text": "Ale dziwny pies"
         }
       ]
     },
