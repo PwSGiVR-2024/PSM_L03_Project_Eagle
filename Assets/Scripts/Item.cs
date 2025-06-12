@@ -5,6 +5,7 @@ public abstract class Item : MonoBehaviour
     public string id;
     public int maxUses;
     public int currentUses;
+    public GameObject orginalGameObject;
     public string itemName;
     public Sprite itemIcon;  // Ikona 2D przedmiotu (do wyœwietlenia w hotbarze)
     [SerializeField] Hotbar hotbar;
