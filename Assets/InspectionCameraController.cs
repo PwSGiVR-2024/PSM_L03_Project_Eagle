@@ -8,7 +8,7 @@ public class InspectionCameraController : MonoBehaviour
 
     [Header("Parametry ruchu")]
     public float distance = 2.0f; // pocz¹tkowa odleg³oœæ od obiektu
-    public float minDistance = 0.7f;
+    public float minDistance = 0.4f;
     public float maxDistance = 4.0f;
     public float rotationSpeed = 100f;
     public float zoomSpeed = 2.0f;
