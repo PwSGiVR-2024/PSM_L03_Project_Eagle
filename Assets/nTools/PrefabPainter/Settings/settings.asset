@@ -17,8 +17,8 @@ MonoBehaviour:
     brushes:
     - name: tree1
       settings:
-        brushRadius: 1
-        brushSpacing: 0.5
+        brushRadius: 20
+        brushSpacing: 5
         brushOverlapCheckMode: 0
         brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 1
@@ -332,8 +332,8 @@ MonoBehaviour:
       customPreviewImage: {fileID: 0}
     - name: tree2
       settings:
-        brushRadius: 3.8
-        brushSpacing: 0.72
+        brushRadius: 8.4
+        brushSpacing: 2.06
         brushOverlapCheckMode: 0
         brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 1
@@ -962,7 +962,7 @@ MonoBehaviour:
       customPreviewImage: {fileID: 0}
     - name: tree4
       settings:
-        brushRadius: 20
+        brushRadius: 10.9
         brushSpacing: 5
         brushOverlapCheckMode: 0
         brushOverlapDistance: 0.5
@@ -1277,8 +1277,8 @@ MonoBehaviour:
       customPreviewImage: {fileID: 0}
     - name: tree5
       settings:
-        brushRadius: 1
-        brushSpacing: 0.5
+        brushRadius: 20
+        brushSpacing: 5
         brushOverlapCheckMode: 0
         brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 1
@@ -1907,8 +1907,8 @@ MonoBehaviour:
       customPreviewImage: {fileID: 0}
     - name: bush2
       settings:
-        brushRadius: 1
-        brushSpacing: 0.5
+        brushRadius: 20
+        brushSpacing: 5
         brushOverlapCheckMode: 0
         brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 1
@@ -2222,8 +2222,8 @@ MonoBehaviour:
       customPreviewImage: {fileID: 0}
     - name: bush3
       settings:
-        brushRadius: 1
-        brushSpacing: 0.5
+        brushRadius: 13.1
+        brushSpacing: 2.01
         brushOverlapCheckMode: 0
         brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 1
