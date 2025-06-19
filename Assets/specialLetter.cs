@@ -24,6 +24,7 @@ public class specialController : MonoBehaviour, IInteractable
 
                 InspectionManager.RequestInspection(gameObject);
                 interactin2.SetActive(true);
+                gameObject.GetComponent<Collider>().enabled = false;
                 Destroy(this);
                 break;
         }
