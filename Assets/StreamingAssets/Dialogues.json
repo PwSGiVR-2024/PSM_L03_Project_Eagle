@@ -32,7 +32,7 @@
         {
           "speaker": "Detektyw",
           "color": "#006e1d",
-          "text": "Milicja była?"
+          "text": "Milicja była u was ostatnio?"
         },
         {
           "speaker": "Baba",
@@ -47,12 +47,12 @@
         {
           "speaker": "Detektyw",
           "color": "#006e1d",
-          "text": "Słyszałem, że ktoś tu ostatnio zginął."
+          "text": "Pani mówi, działo się tu coś ostatnio?."
         },
         {
           "speaker": "Baba",
           "color": "#1159cf",
-          "text": "A tak. Znaleźliśmy chłopaka nad rzeką. Utonął. Zakopalim go po cichu, żeby nie było szumu. Anonimowy. Tak było najlepiej."
+          "text": "Miałam nie mówić, ale panu dobrze z oczu patrzy. Znaleźliśmy chłopaka nad rzeką. Utonął. Zakopalim go po cichu, żeby nie było szumu. Anonimowy. Tak było najlepiej."
         },
         {
           "speaker": "Detektyw",
@@ -82,17 +82,27 @@
         {
           "speaker": "Detektyw",
           "color": "#006e1d",
-          "text": "A ten dworek Wiśniowieckich? Ktoś tam mieszka?"
+          "text": "To już wszystko? Coś jeszcze macie w tej wiosce?"
         },
         {
           "speaker": "Baba",
           "color": "#1159cf",
-          "text": "Pusty od lat. Ruina. Mówią, że tam skarb schowany. Ale też mówią, że przeklęty. Co jeden poszedł, to nie wrócił taki sam. Ale pan niech tam nie idzie. Lepiej na tym wyjdzie."
+          "text": "Cmentarz dziesięć minut piechotą stąd... A, i jest jeszcze stary dworek. Pusty od lat. Ruina. Ludzie mówio, że tam skarb schowany. Ale też mówią, że przeklęty. Co jeden poszedł, to nie wrócił taki sam. Ale pan niech tam nie idzie. Lepiej pan na tym wyjdzie."
         },
         {
           "speaker": "Detektyw(myśli)",
           "color": "#e61212",
           "text": "Zawsze to samo – „lepiej nie grzebać”. Ale jeśli nikt nie grzebie, to śmierdzi dalej."
+        },
+        {
+          "speaker": "Detektyw(myśli)",
+          "color": "#e61212",
+          "text": "Ten cały pochówek coś mi śmierdzi. Trzeba sprawdzić, jak go zakopali."
+        },
+        {
+          "speaker": "Detektyw(myśli)",
+          "color": "#e61212",
+          "text": "Dobra, wracam do auta."
         }
       ]
     },
@@ -112,7 +122,17 @@
         {
           "speaker": "Detektyw(myśli)",
           "color": "#e61212",
-          "text": "Rana... tył głowy. Tępy przedmiot. To nie był przypadek. Kieszenie po lewej stronie..., nietypowe.Leworęczny? Albo ktoś ubrał go odwrotnie.Pośpiech? Panika?"
+          "text": "Rana... tył głowy. Tępy przedmiot. To nie był przypadek."
+        }
+      ]
+    },
+     {
+      "id": "033",
+      "lines": [
+        {
+          "speaker": "Detektyw(myśli)",
+          "color": "#e61212",
+          "text": "Kieszenie po lewej stronie… Dziwne. Albo ktoś ubrał go odwrotnie, albo czegoś szukał. Pośpiech? Panika?"
         }
       ]
     },
@@ -122,7 +142,7 @@
         {
           "speaker": "Detektyw(myśli)",
           "color": "#e61212",
-          "text": "Dworek. Duchy. Wiśniowieccy. Coś tam czeka. Może odpowiedzi. Może śmierć. Trzeba to sprawdzić."
+          "text": "Stary dworek. Wiśniowieccy. Coś tu śmierdzi, i to mocno. Coś tam czeka. Trzeba to sprawdzić — może to wszystko ma jakiś związek z Jagną."
         }
       ]
     },
@@ -132,7 +152,7 @@
         {
           "speaker": "Detektyw(myśli)",
           "color": "#e61212",
-          "text": "Pręt... ciężki. Ślady rdzy i... to chyba krew. Pasuje do rany na głowie chłopaka. To morderstwo."
+          "text": "Pręt... ciężki. Ślady rdzy i... to chyba krew."
         }
       ]
     },
@@ -142,7 +162,7 @@
         {
           "speaker": "Detektyw(myśli)",
           "color": "#e61212",
-          "text": "Może dostanę się przez okno... Wygląda jak jedyna droga. Dworek nie chce wpuścić drzwiami."
+          "text": "Może dostanę się przez okno po prawej stronie... Wygląda jak jedyna droga. Dworek nie chce wpuścić drzwiami."
         }
       ]
     },
@@ -162,7 +182,7 @@
         {
           "speaker": "Detektyw(myśli)",
           "color": "#e61212",
-          "text": "Zegar bez wahadła. Ktoś je wyjął? Żeby zatrzymać czas?"
+          "text": "Dziwnie tu… Jednocześnie jakby dworek był opuszczony od lat, a jednak trzyma się dobrze."
         }
       ]
     },
@@ -172,7 +192,7 @@
         {
           "speaker": "Detektyw(myśli)",
           "color": "#e61212",
-          "text": "Klucz... Ukryty mechanizm. Więc ktoś tu coś planował. Może to była gra od początku."
+          "text": "Bardzo ciekawe obrazy są w tym pomieszczeniu. Właściciel naprawdę musiał uwielbiać sztukę."
         }
       ]
     },
@@ -232,7 +252,7 @@
         {
           "speaker": "Detektyw(myśli)",
           "color": "#e61212",
-          "text": "List o legendzie. Klucz do piwnicy. Więc jednak. Ktoś tu ukrywał więcej niż pamiątki. Może to wszystko prowadzi do prawdy... albo zguby."
+          "text": "List o legendzie. Złoty klucz. Więc jednak. Ktoś tu ukrywał więcej niż pamiątki. Może to wszystko prowadzi do prawdy... albo zguby."
         }
       ]
     },
@@ -247,12 +267,12 @@
         {
           "speaker": "Jagna",
           "color": "#6910a1",
-          "text": "On mówił o skarbie. Poszliśmy na most. Poślizgnął się. Upadł. Wpadł do rzeki. Biegłam po pomoc... i coś mnie pchnęło. Do studni. Ocknęłam się tutaj. Nie wiem ile dni mineło."
+          "text": "On mówił o skarbie. Poszliśmy na most. Poślizgnął się. Upadł. Wpadł do rzeki. Biegłam po pomoc... i coś jakby mnie pchnęło. Do studni. Ocknęłam się tutaj. Nie wiem ile dni mineło."
         },
         {
           "speaker": "Detektyw(myśli)",
           "color": "#e61212",
-          "text": "Patrzy na mnie z nadzieją. Ale jej oczy... coś w nich pływa. Strach? Wina? Albo dobrze udawane jedno i drugie."
+          "text": "Patrzy na mnie z nadzieją. Ale jej oczy... coś w nich pływa. Strach? Wina?"
         },
         {
           "speaker": "Detektyw",
