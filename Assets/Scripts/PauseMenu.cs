@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static GameStateManager;
 
 public class PauseMenu : MonoBehaviour
@@ -46,5 +47,17 @@ public class PauseMenu : MonoBehaviour
         isPaused = false;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+    }
+
+    public void LoadMainMenu(int sceneIndex)
+    {
+        SceneManager.LoadScene(2);
+        isPaused = false;
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+        isPaused = false;
     }
 }
