@@ -10,7 +10,6 @@ public class InspectionManager : MonoBehaviour
     [SerializeField] private GameObject blurPanel; // UI/Canvas z shaderem blur
     [SerializeField] private GameObject inspectionUI; // UI inspekcji (tekst: "Wyjdü: R", tipy, itd.)
     [SerializeField] private Camera inspectionCamera;
-    [SerializeField] private PlayerLook playerLook;
     [SerializeField] private InspectionCameraController inspectionCameraController;
 
     private GameObject inspectedObjectCopy;
