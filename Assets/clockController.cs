@@ -4,6 +4,7 @@ public class clockController : MonoBehaviour, IInteractable
 {
     [SerializeField] GameObject clockHour;
     [SerializeField] GameObject clockMinute;
+    [SerializeField] Animation door;
     public string[] GetInteractionLabels()
     {
         return new string[] { "godzina do przodu", "godzina do ty³u", "5 Min do przodu", "5 min do ty³u" };
@@ -52,9 +53,10 @@ public class clockController : MonoBehaviour, IInteractable
     }
     private void hourCheck()
     {
-        if (Mathf.Approximately(GetZRotation(clockHour), 120f) && Mathf.Approximately(GetZRotation(clockMinute), 330f))
+        if (Mathf.Approximately(GetZRotation(clockHour), 120f) && Mathf.Approximately(GetZRotation(clockMinute), 270f))
         {
             Debug.Log("Zegar ustawiony na 8:15!");
+            door.Play();
             Destroy(this);
         }
     }
