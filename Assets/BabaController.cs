@@ -17,7 +17,7 @@ public class BabaController : MonoBehaviour, IInteractable
                     GetComponent<Animator>().SetTrigger("Dance");
                 };
 
-                DialogueManager.Instance.OnStartDialogueRequested?.Invoke("002");
+                DialogueManager.Instance.OnStartDialogueRequested?.Invoke("001");
                 break;
         }
     }
