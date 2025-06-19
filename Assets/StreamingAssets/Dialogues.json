@@ -340,6 +340,16 @@
           "text": "Drzwi są zamknięte na amen... Potrzebuję czegoś, czym przetnę te łańcuchy."
         }
       ]
+    },
+     {
+      "id": "021",
+      "lines": [
+        {
+          "speaker": "Detektyw(myśli)",
+          "color": "#e61212",
+          "text": "Coś się chyba stało na górze."
+        }
+      ]
     }
   ]
 }
