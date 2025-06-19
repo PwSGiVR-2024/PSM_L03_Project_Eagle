@@ -4799,31 +4799,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2503163528164495415, guid: 8a9a60e35f9eb5f42b6cb35db6b0db36, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.021401
+      value: -15.969009
       objectReference: {fileID: 0}
     - target: {fileID: 2503163528164495415, guid: 8a9a60e35f9eb5f42b6cb35db6b0db36, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.928213
+      value: 1.063693
       objectReference: {fileID: 0}
     - target: {fileID: 2503163528164495415, guid: 8a9a60e35f9eb5f42b6cb35db6b0db36, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -116.91139
+      value: -118.480705
       objectReference: {fileID: 0}
     - target: {fileID: 2503163528164495415, guid: 8a9a60e35f9eb5f42b6cb35db6b0db36, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.78248346
+      value: -0.9734032
       objectReference: {fileID: 0}
     - target: {fileID: 2503163528164495415, guid: 8a9a60e35f9eb5f42b6cb35db6b0db36, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.17966007
+      value: -0.14763066
       objectReference: {fileID: 0}
     - target: {fileID: 2503163528164495415, guid: 8a9a60e35f9eb5f42b6cb35db6b0db36, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.58087337
+      value: 0.1731268
       objectReference: {fileID: 0}
     - target: {fileID: 2503163528164495415, guid: 8a9a60e35f9eb5f42b6cb35db6b0db36, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.13426879
+      value: -0.026804911
       objectReference: {fileID: 0}
     - target: {fileID: 2503163528164495415, guid: 8a9a60e35f9eb5f42b6cb35db6b0db36, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -15088,6 +15088,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: jagna
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: d08222cc0d100e0449a39fc97fbb86f4, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ee748fe92cff03c41985f5a16529796b, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
