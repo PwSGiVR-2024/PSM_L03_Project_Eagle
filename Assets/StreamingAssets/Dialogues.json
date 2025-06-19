@@ -77,22 +77,12 @@
         {
           "speaker": "Detektyw(myśli)",
           "color": "#e61212",
-          "text": "Zły znak... Może to był tylko deszcz. A może coś więcej."
+          "text": "Zły znak... Może to był tylko deszcz. A może coś więcej..."
         },
         {
           "speaker": "Detektyw",
           "color": "#006e1d",
-          "text": "Za wsią widziałem most. Wyróżniał się na tle innych w okolicy. Co może mi Pani o nim powiedzieć?"
-        },
-        {
-          "speaker": "Baba",
-          "color": "#1159cf",
-          "text": "Eee, stary most. Nikt tam nie chodzi, bo się wali. Dzieci się boją, psy nie chcą przez niego przejść. Mówią, że duchy tam są. Ja nie wiem, ale ja tam nie chodzę."
-        },
-        {
-          "speaker": "Detektyw",
-          "color": "#006e1d",
-          "text": "A ten dworek Wiśniowieckich?"
+          "text": "A ten dworek Wiśniowieckich? Ktoś tam mieszka?"
         },
         {
           "speaker": "Baba",
@@ -104,21 +94,242 @@
           "color": "#e61212",
           "text": "Zawsze to samo – „lepiej nie grzebać”. Ale jeśli nikt nie grzebie, to śmierdzi dalej."
         }
-
       ]
     },
     {
       "id": "002",
       "lines": [
         {
-          "speaker": "Baba",
-          "color": "#ff8800",
-          "text": "Witaj, kochaniutki. Patrz co umiem."
+          "speaker": "Detektyw(myśli)",
+          "color": "#e61212",
+          "text": "Grób świeży... ziemia jeszcze wilgotna. Dlaczego rozkopany? Ktoś czegoś szukał? Albo... chciał ukryć coś więcej?"
+        }
+      ]
+    },
+    {
+      "id": "003",
+      "lines": [
+        {
+          "speaker": "Detektyw(myśli)",
+          "color": "#e61212",
+          "text": "Rana... tył głowy. Tępy przedmiot. To nie był przypadek. Kieszenie po lewej stronie..., nietypowe.Leworęczny? Albo ktoś ubrał go odwrotnie.Pośpiech? Panika?"
+        }
+      ]
+    },
+    {
+      "id": "004",
+      "lines": [
+        {
+          "speaker": "Detektyw(myśli)",
+          "color": "#e61212",
+          "text": "Dworek. Duchy. Wiśniowieccy. Coś tam czeka. Może odpowiedzi. Może śmierć. Trzeba to sprawdzić."
+        }
+      ]
+    },
+    {
+      "id": "005",
+      "lines": [
+        {
+          "speaker": "Detektyw(myśli)",
+          "color": "#e61212",
+          "text": "Pręt... ciężki. Ślady rdzy i... to chyba krew. Pasuje do rany na głowie chłopaka. To morderstwo."
+        }
+      ]
+    },
+    {
+      "id": "006",
+      "lines": [
+        {
+          "speaker": "Detektyw(myśli)",
+          "color": "#e61212",
+          "text": "Może dostanę się przez okno... Wygląda jak jedyna droga. Dworek nie chce wpuścić drzwiami."
+        }
+      ]
+    },
+    {
+      "id": "007",
+      "lines": [
+        {
+          "speaker": "Detektyw(myśli)",
+          "color": "#e61212",
+          "text": "Mam złe przeczucia. Ale muszę wiedzieć, co tam się stało. Może to, co znajdę, lepiej byłoby zostawić w spokoju..."
+        }
+      ]
+    },
+    {
+      "id": "008",
+      "lines": [
+        {
+          "speaker": "Detektyw(myśli)",
+          "color": "#e61212",
+          "text": "Zegar bez wahadła. Ktoś je wyjął? Żeby zatrzymać czas?"
+        }
+      ]
+    },
+    {
+      "id": "009",
+      "lines": [
+        {
+          "speaker": "Detektyw(myśli)",
+          "color": "#e61212",
+          "text": "Klucz... Ukryty mechanizm. Więc ktoś tu coś planował. Może to była gra od początku."
+        }
+      ]
+    },
+    {
+      "id": "010",
+      "lines": [
+        {
+          "speaker": "Detektyw(myśli)",
+          "color": "#e61212",
+          "text": "Stół, książki, ściana... coś tu nie pasuje. Ktoś bawił się w sekrety. Rodzina z historią, a może z obsesją?"
+        }
+      ]
+    },
+    {
+      "id": "011",
+      "lines": [
+        {
+          "speaker": "Detektyw(myśli)",
+          "color": "#e61212",
+          "text": "Tajna szuflada. Fragment kodu. Jakby ktoś chciał, żeby to znalazł... albo nie mógł zapomnieć."
+        }
+      ]
+    },
+    {
+      "id": "012",
+      "lines": [
+        {
+          "speaker": "Detektyw(myśli)",
+          "color": "#e61212",
+          "text": "Symbole. Mistyka. Ktoś wierzył, że układ gwiazd ma znaczenie. Albo chciał, by tak to wyglądało."
+        }
+      ]
+    },
+    {
+      "id": "013",
+      "lines": [
+        {
+          "speaker": "Detektyw(myśli)",
+          "color": "#e61212",
+          "text": "Kolejny fragment. Wszystko prowadzi głębiej. Jakby ktoś prowadził mnie za rękę przez ten koszmar."
+        }
+      ]
+    },
+    {
+      "id": "014",
+      "lines": [
+        {
+          "speaker": "Detektyw(myśli)",
+          "color": "#e61212",
+          "text": "Obrazy mają więcej do powiedzenia niż mieszkańcy tej wsi. Cyfry, daty... może historia tej rodziny to jedna wielka zagadka."
+        }
+      ]
+    },
+    {
+      "id": "015",
+      "lines": [
+        {
+          "speaker": "Detektyw(myśli)",
+          "color": "#e61212",
+          "text": "List o legendzie. Klucz do piwnicy. Więc jednak. Ktoś tu ukrywał więcej niż pamiątki. Może to wszystko prowadzi do prawdy... albo zguby."
+        }
+      ]
+    },
+    {
+      "id": "016",
+      "lines": [
+        {
+          "speaker": "Jagna",
+          "color": "#6910a1",
+          "text": "Pomocy... Już tydzień tu siedzę... Noga złamana, nie czuję jej... Byliśmy z Witoldem."
         },
         {
-          "speaker": "Gracz",
-          "color": "#00ccff",
-          "text": "Boże babciu co ty robisz!?."
+          "speaker": "Jagna",
+          "color": "#6910a1",
+          "text": "On mówił o skarbie. Poszliśmy na most. Poślizgnął się. Upadł. Wpadł do rzeki. Biegłam po pomoc... i coś mnie pchnęło. Do studni. Ocknęłam się tutaj. Nie wiem ile dni mineło."
+        },
+        {
+          "speaker": "Detektyw(myśli)",
+          "color": "#e61212",
+          "text": "Patrzy na mnie z nadzieją. Ale jej oczy... coś w nich pływa. Strach? Wina? Albo dobrze udawane jedno i drugie."
+        },
+        {
+          "speaker": "Detektyw",
+          "color": "#006e1d",
+          "text": "Jakim cudem przeżyłaś tyle czasu?"
+        },
+        {
+          "speaker": "Jagna",
+          "color": "#6910a1",
+          "text": "Miałam trochę wody. Słyszałam kapanie z rur. Znalazłam puszki... chyba stare. Gdybym nie miała klucza, byłoby po mnie."
+        },
+        {
+          "speaker": "Detektyw",
+          "color": "#006e1d",
+          "text": "Masz go?"
+        },
+        {
+          "speaker": "Jagna",
+          "color": "#6910a1",
+          "text": "Tak. Cały czas miałam. Czekałam, aż ktoś przyjdzie... albo aż sama umrę."
+        }
+      ]
+    },
+    {
+      "id": "017",
+      "lines": [
+        {
+          "speaker": "Detektyw(myśli)",
+          "color": "#e61212",
+          "text": "Cokolwiek tu się działo, zostawiło ślad. Psychiczny. Fizyczny. I jeszcze coś... Coś, co nie pasuje do wersji Jagny."
+        }
+      ]
+    },
+    {
+      //jesli są zebrane dowody - konfrontacja jagny
+      "id": "018",
+      "lines": [
+        {
+          "speaker": "Detektyw",
+          "color": "#006e1d",
+          "text": "Pręt na moście. Rana z tyłu głowy. Witold nie wpadł – został pchnięty. Burza była dzień później."
+        },
+        {
+          "speaker": "Jagna",
+          "color": "#6910a1",
+          "text": "Ja... Ja nie chciałam. On mówił straszne rzeczy. Krzyczał. Popychał mnie... To był odruch... Pan rozumie?"
+        },
+        {
+          "speaker": "Detektyw",
+          "color": "#006e1d",
+          "text": "Rozumiem desperację. Ale rozumiem też, kiedy ktoś kłamie. Dlaczego nie powiedziałaś wcześniej?"
+        },
+        {
+          "speaker": "Jagna",
+          "color": "#6910a1",
+          "text": "Bo bałam się. Że nikt mi nie uwierzy. Że mnie tu zostawią. Że wrócą po mnie... 'Oni'. Ci, którzy pilnują tego miejsca."
+        },
+        {
+          "speaker": "Detektyw(myśli)",
+          "color": "#e61212",
+          "text": "'Oni'? Albo ślady paranoi, albo coś więcej. A może to tylko sprytny teatr? Dziewczyna, piwnica, klucz i trup na brzegu. Układanka bez instrukcji."
+        }
+      ]
+    },
+    {
+      //jesli nie mamy dowodów
+      "id": "019",
+      "lines": [
+        {
+          "speaker": "Jagna",
+          "color": "#6910a1",
+          "text": "Błagam... Pomóż mi stąd wyjść. Masz jeden klucz, ja mam drugi. Bez obu drzwi się nie otworzą. Proszę..."
+        },
+        {
+          "speaker": "Detektyw(myśli)",
+          "color": "#e61212",
+          "text": "Prawda leży między słowami. Ale czy warto ją rozgrzebywać, jeśli ktoś i tak już leży w grobie?"
         }
       ]
     }
