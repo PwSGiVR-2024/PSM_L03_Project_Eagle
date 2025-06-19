@@ -115,6 +115,7 @@ public class InteractionManager : MonoBehaviour
                     {
                         Debug.Log($"Wykonujê interakcjê nr {i}");
                         currentInteractable.Interact(i);
+                        ClearCurrentInteractable();
                         CancelAllInteractions();
                         return;
                     }

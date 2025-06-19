@@ -15,15 +15,19 @@ public class clockController : MonoBehaviour, IInteractable
         {
             case 0: // godzina do przodu
                 SetZRotation(clockHour, GetZRotation(clockHour) - 30f);
+                hourCheck();
                 break;
             case 1: // godzina do ty³u
                 SetZRotation(clockHour, GetZRotation(clockHour) + 30f);
+                hourCheck();
                 break;
             case 2: // 5 minut do przodu
                 SetZRotation(clockMinute, GetZRotation(clockMinute) - 30f);
+                hourCheck();
                 break;
             case 3: // 5 minut do ty³u
                 SetZRotation(clockMinute, GetZRotation(clockMinute) + 30f);
+                hourCheck();
                 break;
         }
     }
@@ -45,5 +49,13 @@ public class clockController : MonoBehaviour, IInteractable
         angle %= 360f;
         if (angle < 0f) angle += 360f;
         return angle;
+    }
+    private void hourCheck()
+    {
+        if (Mathf.Approximately(GetZRotation(clockHour), 120f) && Mathf.Approximately(GetZRotation(clockMinute), 330f))
+        {
+            Debug.Log("Zegar ustawiony na 8:15!");
+            Destroy(this);
+        }
     }
 }
