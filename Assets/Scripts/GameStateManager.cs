@@ -7,7 +7,8 @@ public class GameStateManager : MonoBehaviour
         Normal,
         Dialogue,
         Pause,
-        Inspect
+        Inspect,
+        Animation
     }
 
     public static GameStateManager Instance { get; private set; }
@@ -29,4 +30,5 @@ public class GameStateManager : MonoBehaviour
     public bool IsNormal => CurrentState == GameState.Normal;
     public bool IsInspect => CurrentState == GameState.Inspect;
     public bool IsPasue => CurrentState == GameState.Pause;
+    public bool IsAnimate => CurrentState == GameState.Animation;
 }

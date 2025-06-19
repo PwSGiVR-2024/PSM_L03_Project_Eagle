@@ -5,6 +5,7 @@ public class BoxLockController : MonoBehaviour
     [SerializeField] private socketController[] sockets;
     [SerializeField] private int[] correctCode;
     [SerializeField] private bool unlockOnce = true;
+    [SerializeField] private GameObject ladder;
 
     private bool isUnlocked = false;
 
@@ -36,9 +37,8 @@ public class BoxLockController : MonoBehaviour
     private void Unlock()
     {
         isUnlocked = true;
-        Debug.Log("K³ódka otwarta!");
-        // tutaj mo¿esz np. uruchomiæ animacjê, dŸwiêk, aktywowaæ coœ:
-        // GetComponent<Animator>().SetTrigger("Open");
-        // gameObject.SetActive(false);
+        DialogueManager.Instance.OnStartDialogueRequested?.Invoke("021");
+        ladder.SetActive(true);
+
     }
 }

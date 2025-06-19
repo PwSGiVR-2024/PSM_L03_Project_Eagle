@@ -102,4 +102,10 @@ public class Hotbar : MonoBehaviour
             UpdateDisplay();
         }
     }
+    public Item GetSelectedItem()
+    {
+        if (itemList.Count == 0) return hand;
+        return itemList[selectedIndex];
+    }
+
 }

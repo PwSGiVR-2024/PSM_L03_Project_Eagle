@@ -1,7 +1,6 @@
 {
   "dialogues": [
     {
-      //Rozmowa z Babą
       "id": "001",
       "lines": [
         {
@@ -98,7 +97,6 @@
       ]
     },
     {
-      //Cmentarz - grób
       "id": "002",
       "lines": [
         {
@@ -109,7 +107,6 @@
       ]
     },
     {
-      //Cmentarz-Zbadanie ciała
       "id": "003",
       "lines": [
         {
@@ -120,7 +117,6 @@
       ]
     },
     {
-      //Random myśl na cmentarzu (znalezione wszystkie mozliwe poszlaki?)
       "id": "004",
       "lines": [
         {
@@ -131,7 +127,6 @@
       ]
     },
     {
-      //Okolice dworku - pręt
       "id": "005",
       "lines": [
         {
@@ -142,7 +137,6 @@
       ]
     },
     {
-      //Okolice dworku - Drabina
       "id": "006",
       "lines": [
         {
@@ -153,7 +147,6 @@
       ]
     },
     {
-      //Okolice dworku - znalezione wszystkie mozliwe poszlaki
       "id": "007",
       "lines": [
         {
@@ -164,7 +157,6 @@
       ]
     },
     {
-      //Wnętrze domu - zegar
       "id": "008",
       "lines": [
         {
@@ -175,7 +167,6 @@
       ]
     },
     {
-      //wnetrze domu - rozwiazanie zagadki z zegarem
       "id": "009",
       "lines": [
         {
@@ -186,7 +177,6 @@
       ]
     },
     {
-      //random komentarz
       "id": "010",
       "lines": [
         {
@@ -197,7 +187,6 @@
       ]
     },
     {
-      //Wnetrze domu - po wcisnięciu przycisków w w biurze
       "id": "011",
       "lines": [
         {
@@ -208,7 +197,6 @@
       ]
     },
     {
-      //Strych - rozwiazanie faz ksiezyca i zodiakow
       "id": "012",
       "lines": [
         {
@@ -219,7 +207,6 @@
       ]
     },
     {
-      //Rozwiazanie prawie wszystkich zagadek w domu
       "id": "013",
       "lines": [
         {
@@ -230,7 +217,6 @@
       ]
     },
     {
-      //Obrazy i sejf - zagadka
       "id": "014",
       "lines": [
         {
@@ -241,7 +227,6 @@
       ]
     },
     {
-      //Po otwarciu sejfu
       "id": "015",
       "lines": [
         {
@@ -252,7 +237,6 @@
       ]
     },
     {
-      //Piwnica - spotkanie jagny
       "id": "016",
       "lines": [
         {
@@ -293,7 +277,6 @@
       ]
     },
     {
-      //Znaleznienie jakichś poszlak w piwnicy po pierwszej rozmowie z jagną
       "id": "017",
       "lines": [
         {
@@ -304,7 +287,6 @@
       ]
     },
     {
-      //jesli są zebrane dowody - konfrontacja jagny
       "id": "018",
       "lines": [
         {
@@ -335,7 +317,6 @@
       ]
     },
     {
-      //jesli nie mamy dowodów
       "id": "019",
       "lines": [
         {
@@ -347,6 +328,26 @@
           "speaker": "Detektyw(myśli)",
           "color": "#e61212",
           "text": "Prawda leży między słowami. Ale czy warto ją rozgrzebywać, jeśli ktoś i tak już leży w grobie?"
+        }
+      ]
+    },
+    {
+      "id": "020",
+      "lines": [
+        {
+          "speaker": "Detektyw(myśli)",
+          "color": "#e61212",
+          "text": "Drzwi są zamknięte na amen... Potrzebuję czegoś, czym przetnę te łańcuchy."
+        }
+      ]
+    },
+     {
+      "id": "021",
+      "lines": [
+        {
+          "speaker": "Detektyw(myśli)",
+          "color": "#e61212",
+          "text": "Coś się chyba stało na górze."
         }
       ]
     }
