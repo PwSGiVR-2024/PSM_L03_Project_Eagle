@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class letterSecoundInteraction : MonoBehaviour
+public class letterSecoundInteraction : MonoBehaviour, IInteractable
 {
     public string[] GetInteractionLabels()
     {
@@ -13,7 +13,7 @@ public class letterSecoundInteraction : MonoBehaviour
         switch (index)
         {
             case 0:
-                SceneManager.LoadScene(7);
+                SceneManager.LoadScene(8);
                 break;
         }
     }
