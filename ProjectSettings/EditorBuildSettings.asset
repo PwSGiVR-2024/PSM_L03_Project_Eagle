@@ -8,6 +8,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/ENDING_Leaving_Jagna.unity
+    guid: 2722f5ef5df96a94a98ac5444f40af14
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 83eb33aca1db18c47977ad31fe02e031
+  - enabled: 1
+    path: Assets/Scenes/ENDING_Saving_jagna.unity
+    guid: b465cbbf1812f654e827fb3492b0827d
+  - enabled: 1
+    path: Assets/Scenes/ENDING_Truth.unity
+    guid: 47e427dfaec6b1141a8ebbb2c62cfe18
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 8b22cdf2810479f41add0c855c8bdada, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
