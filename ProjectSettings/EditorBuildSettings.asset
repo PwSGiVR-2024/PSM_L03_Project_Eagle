@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cemetery.unity
     guid: a6b68040129224144a1ab2583c83633d
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 63009cbe05482c2498abe3b8fafb3485
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 8b22cdf2810479f41add0c855c8bdada, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
