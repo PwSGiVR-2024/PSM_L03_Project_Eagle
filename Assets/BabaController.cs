@@ -12,11 +12,6 @@ public class BabaController : MonoBehaviour, IInteractable
         switch (index)
         {
             case 0:
-                DialogueManager.Instance.OnDialogueEnded = () =>
-                {
-                    GetComponent<Animator>().SetTrigger("Dance");
-                };
-
                 DialogueManager.Instance.OnStartDialogueRequested?.Invoke("001");
                 break;
         }

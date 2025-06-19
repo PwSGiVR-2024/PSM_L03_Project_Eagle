@@ -9,6 +9,15 @@ public class PlayerMovment : MonoBehaviour
     public float MoveSpeed;
     public float RunSpeed;
 
+    [Header("Footstep Audio")]
+    [SerializeField] private AudioSource footstepSource;
+    [SerializeField] private AudioClip footstepClip;
+    [SerializeField] private float footstepDelay = 0.4f;
+    [SerializeField] private float pitchMin = 0.95f;
+    [SerializeField] private float pitchMax = 1.05f;
+
+    private float footstepTimer = 0f;
+
     private CharacterController characterController;
     private Vector3 CurrentMoveVelocity;
     private Vector3 MoveDampVelocity;
@@ -19,7 +28,6 @@ public class PlayerMovment : MonoBehaviour
         characterController = GetComponent<CharacterController>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!GameStateManager.Instance.IsNormal) return;
@@ -42,16 +50,30 @@ public class PlayerMovment : MonoBehaviour
 
         if (characterController.isGrounded)
         {
-            CurrentForceVelocity.y = -5f; 
+            CurrentForceVelocity.y = -5f;
+
+            if (MoveVector.magnitude > 0.1f)
+            {
+                footstepTimer -= Time.deltaTime;
+                if (footstepTimer <= 0f)
+                {
+                    footstepSource.pitch = Random.Range(pitchMin, pitchMax);
+                    footstepSource.PlayOneShot(footstepClip);
+                    footstepTimer = footstepDelay;
+                }
+            }
+            else
+            {
+                footstepTimer = 0f;
+            }
         }
         else
         {
             CurrentForceVelocity.y -= GravityStrenght * Time.deltaTime;
+            footstepTimer = 0f;
         }
 
         Vector3 totalMovement = (CurrentMoveVelocity + CurrentForceVelocity) * Time.deltaTime;
         characterController.Move(totalMovement);
     }
-
-
 }
