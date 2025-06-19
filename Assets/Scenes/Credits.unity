@@ -475,7 +475,51 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 'https://floating-world.itch.io/low-poly-bed?download
+
+    https://batodev.itch.io/psx-low-poly-old-cupboard
+
+    https://duhgless.itch.io/psx-style-low-poly-couch
+
+    https://duhgless.itch.io/psx-style-low-poly-chair
+
+    https://polybrain.itch.io/retro-tv-3d-lowpoly
+
+    https://pepperonijabroni.itch.io/ps1-style-leather-armchair
+
+    https://sketchfab.com/3d-models/old-tools-psx-c2a01052f23d438d9a3c65e649e2829d
+
+    https://sketchfab.com/3d-models/psx-storage-shelves-cardboard-boxs-07052162b960480898d451e9854b46e8
+
+    https://sketchfab.com/3d-models/electronics-kitchen-1cb38a2dcddb476dae685d85cf6deddd
+
+    https://bedtimestories.itch.io/awesome-psx-asset-collection/download/eyJpZCI6Mjc2OTAyOCwiZXhwaXJlcyI6MTc1MDEwMTEyOH0%3d.idZQDXk6Qo7aFB5jMt9uE5U6Nac%3d
+
+    https://freesound.org/people/bulbastre/sounds/126950/
+
+    https://freesound.org/people/JarredGibb/sounds/219496/
+
+    https://freesound.org/people/inchadney/sounds/51690/
+
+    https://freesound.org/people/klankbeeld/sounds/568494/
+
+    https://freesound.org/people/klankbeeld/sounds/626782/
+
+    https://freesound.org/people/Philippsfoleys/sounds/268172/
+
+    https://freesound.org/people/klankbeeld/sounds/204899/
+
+    https://freesound.org/people/klankbeeld/sounds/624877/
+
+    https://opengameart.org/content/ambientmenu
+
+    https://freesound.org/people/LittleRobotSoundFactory/sounds/270410/
+
+    https://mcsteeg.itch.io/psx-farm-tools
+
+    https://sketchfab.com/3d-models/ps1-house-beae552a804f45ee94ce9e53c0e25c39#download
+
+    https://sketchfab.com/3d-models/low-poly-maluch-73c1ae9fd6c04ccb99ba57e5683422a9#download'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -502,8 +546,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
