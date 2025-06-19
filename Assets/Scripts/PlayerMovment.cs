@@ -23,28 +23,35 @@ public class PlayerMovment : MonoBehaviour
     void Update()
     {
         if (!GameStateManager.Instance.IsNormal) return;
-        Vector3 PlayerInput = new Vector3
-        {
-            x = InputSystem.actions.FindAction("Move").ReadValue<Vector2>().x,
-            y = 0f,
-            z = InputSystem.actions.FindAction("Move").ReadValue<Vector2>().y
-        };
+
+        Vector2 input = InputSystem.actions.FindAction("Move").ReadValue<Vector2>();
+        Vector3 PlayerInput = new Vector3(input.x, 0f, input.y);
+
         if (PlayerInput.magnitude > 1f)
-        {
             PlayerInput.Normalize();
-        }
+
         Vector3 MoveVector = transform.TransformDirection(PlayerInput);
-        float CurrentSpeed =  Input.GetKey(KeyCode.LeftShift) ? RunSpeed : MoveSpeed;
+        float CurrentSpeed = Input.GetKey(KeyCode.LeftShift) ? RunSpeed : MoveSpeed;
 
         CurrentMoveVelocity = Vector3.SmoothDamp(
             CurrentMoveVelocity,
             MoveVector * CurrentSpeed,
             ref MoveDampVelocity,
             MoveSmoothTime
-            );
-        characterController.Move( CurrentMoveVelocity *Time.deltaTime);
-        CurrentForceVelocity.y -= GravityStrenght * Time.deltaTime;
-        characterController.Move(CurrentForceVelocity * Time.deltaTime);
+        );
+
+        if (characterController.isGrounded)
+        {
+            CurrentForceVelocity.y = -5f; 
+        }
+        else
+        {
+            CurrentForceVelocity.y -= GravityStrenght * Time.deltaTime;
+        }
+
+        Vector3 totalMovement = (CurrentMoveVelocity + CurrentForceVelocity) * Time.deltaTime;
+        characterController.Move(totalMovement);
     }
+
 
 }
