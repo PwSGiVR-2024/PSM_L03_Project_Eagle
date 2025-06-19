@@ -332,8 +332,8 @@ MonoBehaviour:
       customPreviewImage: {fileID: 0}
     - name: tree2
       settings:
-        brushRadius: 8.4
-        brushSpacing: 2.06
+        brushRadius: 11.9
+        brushSpacing: 2.7
         brushOverlapCheckMode: 0
         brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 1
@@ -962,8 +962,8 @@ MonoBehaviour:
       customPreviewImage: {fileID: 0}
     - name: tree4
       settings:
-        brushRadius: 10.9
-        brushSpacing: 5
+        brushRadius: 7.1
+        brushSpacing: 2.88
         brushOverlapCheckMode: 0
         brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 1
@@ -1272,7 +1272,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
       customPreviewImage: {fileID: 0}
     - name: tree5
@@ -2532,7 +2532,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 0
+      selected: 1
       colorTag: 0
       customPreviewImage: {fileID: 0}
     levelsGamma: 1
