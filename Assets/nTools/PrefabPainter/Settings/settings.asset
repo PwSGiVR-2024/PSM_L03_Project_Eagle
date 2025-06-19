@@ -333,7 +333,7 @@ MonoBehaviour:
     - name: tree2
       settings:
         brushRadius: 11.9
-        brushSpacing: 2.7
+        brushSpacing: 2.73
         brushOverlapCheckMode: 0
         brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 1
@@ -642,7 +642,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 0
+      selected: 1
       colorTag: 0
       customPreviewImage: {fileID: 0}
     - name: tree3
@@ -963,7 +963,7 @@ MonoBehaviour:
     - name: tree4
       settings:
         brushRadius: 7.1
-        brushSpacing: 2.88
+        brushSpacing: 5
         brushOverlapCheckMode: 0
         brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 1
@@ -1907,7 +1907,7 @@ MonoBehaviour:
       customPreviewImage: {fileID: 0}
     - name: bush2
       settings:
-        brushRadius: 20
+        brushRadius: 0.01
         brushSpacing: 5
         brushOverlapCheckMode: 0
         brushOverlapDistance: 0.5
@@ -2532,7 +2532,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
       customPreviewImage: {fileID: 0}
     levelsGamma: 1
@@ -4524,7 +4524,7 @@ MonoBehaviour:
   pinSnapScale: 0
   placeAngleStep: 15
   placeScaleStep: 0.1
-  eraseBrushRadius: 5
+  eraseBrushRadius: 20
   eraseByLayer: 1
   eraseLayers:
     serializedVersion: 2
