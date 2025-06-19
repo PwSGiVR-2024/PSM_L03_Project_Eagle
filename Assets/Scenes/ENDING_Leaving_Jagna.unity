@@ -270,18 +270,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textField: {fileID: 1253715827}
-  fullText: "Min\u0119\u0142y tygodnie. Jagna znikn\u0119\u0142a z twojego \u017Cycia
-    tak szybko, jak si\u0119 w nim pojawi\u0142a. Zostawi\u0142e\u015B j\u0105 wtedy
-    w tej piwnicy \u2013 s\u0142ab\u0105, rann\u0105, ale \u017Cyw\u0105. \nPowiedzia\u0142a,
-    \u017Ce nie wr\xF3ci, \u017Ce nie chce, by kto\u015B jeszcze wiedzia\u0142. I
-    znikn\u0119\u0142a.\nA Skarb? Nie znaleziono niczego. Ani \u015Blad\xF3w, ani
-    z\u0142ota, ani kolejnych cia\u0142.\nLudzie m\xF3wili, \u017Ce co\u015B \u015Bmierdzi,
-    ale nikt nie pyta\u0142 g\u0142o\u015Bno. \nBo jak mawia stare dobre porzekad\u0142o:
-    \n\"Im mniej wiesz - tym lepiej \u015Bpisz.\" \nA ty? Wcale nie sypiasz dobrze.
-    \nCzasem \u015Bni Ci si\u0119 jej g\u0142os. \nTe s\u0142owa wypowiadane szeptem
-    w ciemno\u015Bci: \n\"Dzi\u0119kuj\u0119, \u017Ce nie zapyta\u0142e\u015B\" 
-    \nI za ka\u017Cdym razem budzisz si\u0119 z t\u0105 sam\u0105 my\u015Bl\u0105:\nto
-    nie by\u0142 komplement..."
+  fullText: "By\u0142e\u015B tam. Widzia\u0142e\u015B j\u0105. Le\u017Ca\u0142a na
+    zimnej pod\u0142odze, blada, z oczyma pe\u0142nymi pyta\u0144. \nW twojej torbie
+    \u2013 ci\u0119\u017Car wi\u0119kszy ni\u017C z\u0142oto. Decyzja zapad\u0142a
+    szybciej ni\u017C s\u0142owo.\nNie powiedzia\u0142a nic, kiedy odchodzi\u0142e\u015B.
+    \nMo\u017Ce nie mog\u0142a. Mo\u017Ce wiedzia\u0142a, \u017Ce to ju\u017C nie
+    ma znaczenia.\nKilka godzin p\xF3\u017Aniej jecha\u0142e\u015B t\u0105 sam\u0105
+    drog\u0105, kt\xF3r\u0105 tu przyby\u0142e\u015B. \nMg\u0142a. Cisza. Las z obu
+    stron. A potem \u2013 nic.\nNie ma \u015Bwiadk\xF3w. Nie ma sprawcy. \nTylko
+    roztrzaskane drzewo i torba, \nkt\xF3rej nikt nie odwa\u017Cy\u0142 si\u0119
+    otworzy\u0107.\nWie\u015B\u0107 niesie, \u017Ce gdy zapada noc, \na wiatr gwi\u017Cd\u017Ce
+    nad mokrad\u0142em, s\u0142ycha\u0107 odg\u0142os krok\xF3w. \nJeden krok...
+    potem drugi... a potem ju\u017C nic."
   delay: 0.1
   startDelay: 2
   fadeDuration: 3
