@@ -4,20 +4,107 @@
       "id": "001",
       "lines": [
         {
-          "speaker": "Gracz",
-          "color": "#00ccff",
-          "text": "Cześć, yyyyyyyyyyyyy psie."
+          "speaker": "Baba",
+          "color": "#1159cf",
+          "text": "A pan czego tak tu łazi, panocku? Czego pan szuka?"
         },
         {
-          "speaker": "Pies",
-          "color": "#ff00ff",
-          "text": "AAAAAAAAAA AAAAAAAAAAAAAAAA AAAAAAAAAAAAAA"
+          "speaker": "Detektyw",
+          "color": "#006e1d",
+          "text": "Przejeżdżałem, coś mnie tu zatrzymało. Spokojnie tu... aż za spokojnie."
+        },
+
+        {
+          "speaker": "Baba",
+          "color": "#1159cf",
+          "text": "Spokojnie, pan mówi? To pan nie wie, co tu się działo. Ale to nie pańska sprawa. Lepiej pan niech wraca, skąd przyjechał."
         },
         {
-          "speaker": "Gracz",
-          "color": "#00ccff",
-          "text": "Ale dziwny pies"
+          "speaker": "Detektyw",
+          "color": "#006e1d",
+          "text": "Jestem detektywem. Szukam zaginionej dziewczyny – Jagny. Zniknęła tydzień temu."
+        },
+        {
+          "speaker": "Baba",
+          "color": "#1159cf",
+          "text": "Jagny? Pierwsze słyszę. My tu nie mamy takich. A jak znikła, to może uciekła. Albo sama chciała zniknąć."
+        },
+        {
+          "speaker": "Detektyw",
+          "color": "#006e1d",
+          "text": "Milicja była?"
+        },
+        {
+          "speaker": "Baba",
+          "color": "#1159cf",
+          "text": "Byli. Ale tylko popatrzyli, pokręcili się. My ich pogonilim. Nie chcemy tu ich papierów, pieczątek i grzebania."
+        },
+        {
+          "speaker": "Detektyw(myśli)",
+          "color": "#e61212",
+          "text": "Typowe. Wspólnota zamknięta jak konserwa. Trzeba uważać na to co robię i o co pytam..."
+        },
+        {
+          "speaker": "Detektyw",
+          "color": "#006e1d",
+          "text": "Słyszałem, że ktoś tu ostatnio zginął."
+        },
+        {
+          "speaker": "Baba",
+          "color": "#1159cf",
+          "text": "A tak. Znaleźliśmy chłopaka nad rzeką. Utonął. Zakopalim go po cichu, żeby nie było szumu. Anonimowy. Tak było najlepiej."
+        },
+        {
+          "speaker": "Detektyw",
+          "color": "#006e1d",
+          "text": "A rodzina? Nikt nie szukał?"
+        },
+        {
+          "speaker": "Baba",
+          "color": "#1159cf",
+          "text": "Panie, tu się nie pyta. Znalazło się ciało, to trzeba było zakopać. Z szacunkiem, ale bez rozgłosu."
+        },
+        {
+          "speaker": "Detektyw",
+          "color": "#006e1d",
+          "text": "Może miało to coś wspólnego z burzą w tym rejonie? Czytałem w gazecie, że była gwałtowna."
+        },
+        {
+          "speaker": "Baba",
+          "color": "#1159cf",
+          "text": "A i owszem. Dachy rwało, drzewa łamało. Cała noc się nie dało oka zmrużyć. Zwierzęta wariowały. To był zły znak. Ludzie gadali, że coś złego tu przyszło."
+        },
+        {
+          "speaker": "Detektyw(myśli)",
+          "color": "#e61212",
+          "text": "Zły znak... Może to był tylko deszcz. A może coś więcej."
+        },
+        {
+          "speaker": "Detektyw",
+          "color": "#006e1d",
+          "text": "Za wsią widziałem most. Wyróżniał się na tle innych w okolicy. Co może mi Pani o nim powiedzieć?"
+        },
+        {
+          "speaker": "Baba",
+          "color": "#1159cf",
+          "text": "Eee, stary most. Nikt tam nie chodzi, bo się wali. Dzieci się boją, psy nie chcą przez niego przejść. Mówią, że duchy tam są. Ja nie wiem, ale ja tam nie chodzę."
+        },
+        {
+          "speaker": "Detektyw",
+          "color": "#006e1d",
+          "text": "A ten dworek Wiśniowieckich?"
+        },
+        {
+          "speaker": "Baba",
+          "color": "#1159cf",
+          "text": "Pusty od lat. Ruina. Mówią, że tam skarb schowany. Ale też mówią, że przeklęty. Co jeden poszedł, to nie wrócił taki sam. Ale pan niech tam nie idzie. Lepiej na tym wyjdzie."
+        },
+        {
+          "speaker": "Detektyw(myśli)",
+          "color": "#e61212",
+          "text": "Zawsze to samo – „lepiej nie grzebać”. Ale jeśli nikt nie grzebie, to śmierdzi dalej."
         }
+
       ]
     },
     {
