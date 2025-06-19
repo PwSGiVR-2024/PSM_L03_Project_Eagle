@@ -11,16 +11,25 @@ public class EndTextController : MonoBehaviour
     public float startDelay = 2f;
     public float fadeDuration = 3f;
     public float waitAfterFade = 2f;
-    public string mainMenuSceneName = "MainMenu"; // <- nazwij swoj¹ scenê menu
+    public string mainMenuSceneName = "MainMenu";
+    public AudioSource voiceoverSource;
 
     public AudioSource ambientSource;
 
     void Start()
     {
         if (ambientSource != null)
-            ambientSource.Play();
+            ambientSource.Play(); // Ambient leci od razu
 
-        StartCoroutine(TypeText());
+        if (voiceoverSource != null)
+            StartCoroutine(DelayedVoiceStart());
+
+        StartCoroutine(TypeText()); // tekst te¿ ma 2 sekundy opóŸnienia
+    }
+    IEnumerator DelayedVoiceStart()
+    {
+        yield return new WaitForSeconds(startDelay);  // czyli 2 sekundy
+        voiceoverSource.Play();
     }
 
     IEnumerator TypeText()
