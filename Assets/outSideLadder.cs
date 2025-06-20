@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class outSideLadder : MonoBehaviour
+public class outSideLadder : MonoBehaviour, IInteractable
 {
     private bool afterMonolog = false;
     public string[] GetInteractionLabels()
@@ -24,7 +24,7 @@ public class outSideLadder : MonoBehaviour
             {
                 case 0:
 
-                    SceneManager.LoadScene(9);
+                    SceneManager.LoadScene(10);
                     break;
             }
         }
@@ -33,7 +33,7 @@ public class outSideLadder : MonoBehaviour
             switch (index)
             {
                 case 0:
-                    DialogueManager.Instance.OnStartDialogueRequested?.Invoke("006");
+                    DialogueManager.Instance.OnStartDialogueRequested?.Invoke("007");
                     afterMonolog = true;
                     break;
             }
