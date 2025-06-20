@@ -32,6 +32,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Prologue.unity
     guid: 112e9c3640c705e4580eb691d76cd81d
+  - enabled: 1
+    path: Assets/Scenes/VillaTerrain.unity
+    guid: e96574b0b4f05cd49a10a4eced08d731
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 8b22cdf2810479f41add0c855c8bdada, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
