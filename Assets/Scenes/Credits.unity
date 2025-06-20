@@ -448,8 +448,9 @@ GameObject:
   - component: {fileID: 1752070771}
   - component: {fileID: 1752070770}
   - component: {fileID: 1752070769}
+  - component: {fileID: 1752070772}
   m_Layer: 5
-  m_Name: Ending
+  m_Name: Credits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -475,54 +476,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'https://floating-world.itch.io/low-poly-bed?download
-
-    https://batodev.itch.io/psx-low-poly-old-cupboard
-
-    https://duhgless.itch.io/psx-style-low-poly-couch
-
-    https://duhgless.itch.io/psx-style-low-poly-chair
-
-    https://polybrain.itch.io/retro-tv-3d-lowpoly
-
-    https://pepperonijabroni.itch.io/ps1-style-leather-armchair
-
-    https://sketchfab.com/3d-models/old-tools-psx-c2a01052f23d438d9a3c65e649e2829d
-
-    https://sketchfab.com/3d-models/psx-storage-shelves-cardboard-boxs-07052162b960480898d451e9854b46e8
-
-    https://sketchfab.com/3d-models/electronics-kitchen-1cb38a2dcddb476dae685d85cf6deddd
-
-    https://bedtimestories.itch.io/awesome-psx-asset-collection/download/eyJpZCI6Mjc2OTAyOCwiZXhwaXJlcyI6MTc1MDEwMTEyOH0%3d.idZQDXk6Qo7aFB5jMt9uE5U6Nac%3d
-
-    https://freesound.org/people/bulbastre/sounds/126950/
-
-    https://freesound.org/people/JarredGibb/sounds/219496/
-
-    https://freesound.org/people/inchadney/sounds/51690/
-
-    https://freesound.org/people/klankbeeld/sounds/568494/
-
-    https://freesound.org/people/klankbeeld/sounds/626782/
-
-    https://freesound.org/people/Philippsfoleys/sounds/268172/
-
-    https://freesound.org/people/klankbeeld/sounds/204899/
-
-    https://freesound.org/people/klankbeeld/sounds/624877/
-
-    https://opengameart.org/content/ambientmenu
-
-    https://freesound.org/people/LittleRobotSoundFactory/sounds/270410/
-
-    https://mcsteeg.itch.io/psx-farm-tools
-
-    https://sketchfab.com/3d-models/ps1-house-beae552a804f45ee94ce9e53c0e25c39#download
-
-    https://sketchfab.com/3d-models/low-poly-maluch-73c1ae9fd6c04ccb99ba57e5683422a9#download'
+  m_text: "MODELE:\nhttps://floating-world.itch.io/low-poly-bed?download\nhttps://batodev.itch.io/psx-low-poly-old-cupboard\nhttps://duhgless.itch.io/psx-style-low-poly-couch\nhttps://duhgless.itch.io/psx-style-low-poly-chair\nhttps://polybrain.itch.io/retro-tv-3d-lowpoly\nhttps://pepperonijabroni.itch.io/ps1-style-leather-armchair\nhttps://sketchfab.com/3d-models/old-tools-psx-c2a01052f23d438d9a3c65e649e2829d\nhttps://sketchfab.com/3d-models/psx-storage-shelves-cardboard-boxs-07052162b960480898d451e9854b46e8\nhttps://sketchfab.com/3d-models/electronics-kitchen-1cb38a2dcddb476dae685d85cf6deddd\nhttps://bedtimestories.itch.io/awesome-psx-asset-collection/download/eyJpZCI6Mjc2OTAyOCwiZXhwaXJlcyI6MTc1MDEwMTEyOH0%3d.idZQDXk6Qo7aFB5jMt9uE5U6Nac%3d\nhttps://freesound.org/people/bulbastre/sounds/126950/\nhttps://freesound.org/people/JarredGibb/sounds/219496/\nhttps://freesound.org/people/inchadney/sounds/51690/\nhttps://freesound.org/people/klankbeeld/sounds/568494/\nhttps://freesound.org/people/klankbeeld/sounds/626782/\nhttps://freesound.org/people/Philippsfoleys/sounds/268172/\nhttps://freesound.org/people/klankbeeld/sounds/204899/\nhttps://freesound.org/people/klankbeeld/sounds/624877/\nhttps://opengameart.org/content/ambientmenu\nhttps://freesound.org/people/LittleRobotSoundFactory/sounds/270410/\nhttps://mcsteeg.itch.io/psx-farm-tools\nhttps://sketchfab.com/3d-models/ps1-house-beae552a804f45ee94ce9e53c0e25c39#download\nhttps://sketchfab.com/3d-models/low-poly-maluch-73c1ae9fd6c04ccb99ba57e5683422a9#download\n\nZESP\xD3\u0141:\nJAKUB
+    jANKOWSKI - G\u0141\xD3WNY PROGRAMISTA, TEAM LEADER\nGERARD SITEK - GRAFIK, DEKOROWANIE
+    SCEN\nMI\u0141OSZ MARTENKA - GRAFIK, MODELOWANIE\n\nESCAPE, ABY WR\xD3CI\u0106
+    DO MENU"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5d9c3610286f7c744b5ed761835681fb, type: 2}
+  m_sharedMaterial: {fileID: -8238185968495165085, guid: 5d9c3610286f7c744b5ed761835681fb, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -614,9 +574,22 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1803, y: 1012}
+  m_AnchoredPosition: {x: -1803, y: 123}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1752070772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752070768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 170f9319400668e4197e2b4ddd3592f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollSpeed: 50
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
