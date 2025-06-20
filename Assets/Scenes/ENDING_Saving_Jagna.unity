@@ -286,7 +286,7 @@ MonoBehaviour:
   startDelay: 2
   fadeDuration: 3
   waitAfterFade: 2
-  mainMenuSceneName: MainMenu
+  mainMenuSceneName: Credits
   voiceoverSource: {fileID: 677215278}
   ambientSource: {fileID: 1238402055}
 --- !u!4 &404876156
