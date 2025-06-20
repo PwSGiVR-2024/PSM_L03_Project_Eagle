@@ -262,12 +262,12 @@
         {
           "speaker": "Jagna",
           "color": "#6910a1",
-          "text": "Pomocy... Już tydzień tu siedzę... Noga złamana, nie czuję jej... Byliśmy z Witoldem."
+          "text": "Pomocy... Proszę pomóż mi... Noga złamana, nie czuję jej... Byliśmy z Witoldem."
         },
         {
           "speaker": "Jagna",
           "color": "#6910a1",
-          "text": "On mówił o skarbie. Poszliśmy na most. Poślizgnął się. Upadł. Wpadł do rzeki. Biegłam po pomoc... i coś jakby mnie pchnęło. Do studni. Ocknęłam się tutaj. Nie wiem ile dni mineło."
+          "text": "On mówił o skarbie. Gdy byliśmy na moście. Poślizgnął się. Upadł. Wpadł do rzeki. Biegłam po pomoc... i coś jakby mnie pchnęło. Do studni. Doczołgałam się tutaj. Nie wiem ile dni mineło."
         },
         {
           "speaker": "Detektyw(myśli)",
@@ -287,12 +287,22 @@
         {
           "speaker": "Detektyw",
           "color": "#006e1d",
-          "text": "Masz go?"
+          "text": "Po co tu przyszliście?"
         },
         {
           "speaker": "Jagna",
           "color": "#6910a1",
-          "text": "Tak. Cały czas miałam. Czekałam, aż ktoś przyjdzie... albo aż sama umrę."
+          "text": "Chcieliśmy znaleźć skarb o którym mówił Witold."
+        },
+         {
+          "speaker": "Jagna",
+          "color": "#6910a1",
+          "text": "To była nadzieja na nowy początek dla nas obu."
+        },
+         {
+          "speaker": "Detektyw",
+          "color": "#006e1d",
+          "text": "Spokojnie zaraz wszystko się ułoży"
         }
       ]
     },
@@ -312,27 +322,27 @@
         {
           "speaker": "Detektyw",
           "color": "#006e1d",
-          "text": "Pręt na moście. Rana z tyłu głowy. Witold nie wpadł – został pchnięty. Burza była dzień później."
+          "text": "Pręt na moście. Rana z tyłu głowy. Witold nie wpadł – został pchnięty. To byłaś ty!"
         },
         {
           "speaker": "Jagna",
           "color": "#6910a1",
-          "text": "Ja... Ja nie chciałam. On mówił straszne rzeczy. Krzyczał. Popychał mnie... To był odruch... Pan rozumie?"
+          "text": "Ja... Ja nie chciałam. On... on... on mnie nie kochał, Wiedziałam, że z tym skarbem ułożę sobię życie na nowo"
         },
         {
           "speaker": "Detektyw",
           "color": "#006e1d",
-          "text": "Rozumiem desperację. Ale rozumiem też, kiedy ktoś kłamie. Dlaczego nie powiedziałaś wcześniej?"
+          "text": "To nie był powód żeby go zabijać!"
+        },
+        {
+          "speaker": "Detektyw",
+          "color": "#006e1d",
+          "text": "Będziesz się tłumaczyć przed milicją"
         },
         {
           "speaker": "Jagna",
           "color": "#6910a1",
-          "text": "Bo bałam się. Że nikt mi nie uwierzy. Że mnie tu zostawią. Że wrócą po mnie... 'Oni'. Ci, którzy pilnują tego miejsca."
-        },
-        {
-          "speaker": "Detektyw(myśli)",
-          "color": "#e61212",
-          "text": "'Oni'? Albo ślady paranoi, albo coś więcej. A może to tylko sprytny teatr? Dziewczyna, piwnica, klucz i trup na brzegu. Układanka bez instrukcji."
+          "text": "Błagam, nie wydawaj mnie psom"
         }
       ]
     },
